@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 14 Pro Max - Official Store</title>
+    <link rel="stylesheet" href="iphone.css">
+    
+</head>
+<body>
+    <div class="container" id="mainContainer">
+        <div class="particles" id="particles"></div>
+
+        <header>
+            <a href="#"><img src="image/logo.png" class="logo" alt="Apple Logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Specs</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" onclick="showNotification('Cart opened!')">
+                <svg viewBox="0 0 24 24">
+                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                </svg>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="text">
+                <h2>iPhone 14 Pro Max</h2>
+                <p class="subtitle">Experience the ultimate power and elegance. The most advanced iPhone ever created.</p>
+
+                <div class="features">
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <div class="feature-text">
+                            <h4>6.7" Display</h4>
+                            <p>Super Retina XDR</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-text">
+                            <h4>A16 Bionic</h4>
+                            <p>Lightning Fast</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📷</div>
+                        <div class="feature-text">
+                            <h4>48MP Camera</h4>
+                            <p>Pro Photography</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔋</div>
+                        <div class="feature-text">
+                            <h4>All-Day Battery</h4>
+                            <p>29 Hours Video</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="price-section">
+                    <span class="price" id="currentPrice">$1,199</span>
+                    <span class="old-price">$1,499</span>
+                </div>
+
+                <div class="buttons">
+                    <button class="btn btn-primary" onclick="addToCart()">
+                        🛒 Add to Cart
+                    </button>
+                    <a href="#specs" class="btn btn-secondary">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+
+            <div class="image-section">
+                <div class="glow-effect"></div>
+                <div class="phone-container">
+                    <img class="phone-image" id="phoneImage" src="image/0.png" alt="iPhone 14 Pro Max">
+                </div>
+            </div>
+        </div>
+
+        <div class="color-selector">
+            <div class="color-option active" onclick="changePhone('image/0.png', '#000000', 0)">
+                <img src="image/0.png" alt="Space Black">
+            </div>
+            <div class="color-option" onclick="changePhone('image/1.png', '#247ec8', 1)">
+                <img src="image/1.png" alt="Deep Purple">
+            </div>
+            <div class="color-option" onclick="changePhone('image/2.png', '#1e1e1e', 2)">
+                <img src="image/2.png" alt="Silver">
+            </div>
+            <div class="color-option" onclick="changePhone('image/3.png', '#c79b53', 3)">
+                <img src="image/3.png" alt="Gold">
+            </div>
+            <div class="color-option" onclick="changePhone('image/4.png', '#696969', 4)">
+                <img src="image/4.png" alt="Graphite">
+            </div>
+        </div>
+
+        <div class="specs-section" id="specs">
+            <h2 class="specs-title">Technical Specifications</h2>
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-icon">🖥️</div>
+                    <h3>Display</h3>
+                    <p>6.7-inch Super Retina XDR display with ProMotion, Always-On display, and Dynamic Island</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon">💎</div>
+                    <h3>Chip</h3>
+                    <p>A16 Bionic chip with 6-core CPU, 5-core GPU, and 16-core Neural Engine</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon">📸</div>
+                    <h3>Camera System</h3>
+                    <p>Pro camera system: 48MP Main, 12MP Ultra Wide, 12MP Telephoto with 3x optical zoom</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon">🎥</div>
+                    <h3>Video</h3>
+                    <p>4K Dolby Vision up to 60 fps, ProRes video recording, Cinematic mode up to 4K HDR at 30 fps</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon">🔐</div>
+                    <h3>Security</h3>
+                    <p>Face ID, Emergency SOS via satellite, Crash Detection</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon">💪</div>
+                    <h3>Durability</h3>
+                    <p>Ceramic Shield front, Textured matte glass back, Surgical-grade stainless steel</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="notification" id="notification">
+            Item added to cart! 🎉
+        </div>
+    </div>
+
+    <script src="iphone.js"></script>
+</body>
+</html>
