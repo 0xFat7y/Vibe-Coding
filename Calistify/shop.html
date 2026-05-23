@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipment Shop - CALISTIFY</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .product-image {
+      width: 100%;
+      height: 260px;
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      padding: 1rem;
+      box-sizing: border-box;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .product-image img { transform: scale(1.05); }
+    .product-img-placeholder {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      position: absolute;
+      inset: 0;
+      color: var(--text-muted);
+      background: linear-gradient(135deg, rgba(255,215,0,0.03), rgba(255,215,0,0.08));
+      padding: 1rem;
+    }
+    .product-img-placeholder i { font-size: 3rem; color: var(--primary); opacity: 0.35; }
+    .product-img-placeholder span { font-family: var(--font-heading); font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.45; }
+    .product-img-placeholder code { font-size: 0.7rem; color: var(--primary); opacity: 0.6; background: rgba(255,215,0,0.07); padding: 3px 10px; border-radius: 4px; border: 1px solid rgba(255,215,0,0.2); }
+    .product-image img.img-error { display: none; }
+    .product-image img.img-error + .product-img-placeholder { display: flex; }
+  </style>
+</head>
+<body>
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-logo">CALISTIFY</div>
+      <button class="mobile-nav-close" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="mobile-nav-links" id="mobileNavLinks">
+      <a href="index.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-house"></i></span> Home
+      </a>
+      <a href="about.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-circle-info"></i></span> About
+      </a>
+      <a href="training.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-dumbbell"></i></span> Training
+      </a>
+      <a href="nutrition.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-apple-whole"></i></span> Nutrition
+      </a>
+      <a href="shop.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-bag-shopping"></i></span> Shop
+      </a>
+    </nav>
+    <div class="mobile-nav-divider"></div>
+    <div class="mobile-nav-actions">
+      <a href="login.html" class="btn btn-outline" onclick="closeMobileNav()">Login</a>
+      <a href="register.html" class="btn btn-primary" onclick="closeMobileNav()">Sign Up</a>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo" onclick="window.location.href='index.html'"><img src="images/Calistify logo.png" alt="Calistify" class="logo-img"></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+      </ul>
+      <div class="user-actions">
+        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+        <div class="cart-icon" onclick="window.location.href='cart.html'">
+          <i class="fas fa-shopping-cart" style="font-size: 1.5rem;"></i>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="register.html" class="btn btn-primary">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="shop-header">
+    <div class="container">
+      <h1 class="text-gradient">EQUIPMENT SHOP</h1>
+      <p style="font-size: 1.4rem; color: var(--text-secondary);">High-quality calisthenics equipment for your training needs</p>
+    </div>
+  </section>
+
+  <section style="padding: 4rem 0;">
+    <div class="container">
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="Products/Pull up bar.png" alt="Pull-Up Bar" onerror="this.classList.add('img-error');">
+            <div class="product-img-placeholder"><i class="fas fa-image"></i><span>Product Image</span><code>Pull up bar.png</code></div>
+          </div>
+          <div class="product-body">
+            <div class="product-category">Equipment</div>
+            <h3 class="product-name">Pull-Up Bar (Wall Mount)</h3>
+            <div class="product-price">$79.99</div>
+            <div class="product-features">Heavy-duty steel construction, supports 300lbs, multiple grip positions</div>
+            <button class="add-to-cart-btn" onclick="addToCart({id:1,name:'Pull-Up Bar',price:79.99,image:'Products/Pull up bar.png'})"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="Products/Parallette Bars (Set of 2).png" alt="Parallette Bars" onerror="this.classList.add('img-error');">
+            <div class="product-img-placeholder"><i class="fas fa-image"></i><span>Product Image</span><code>Parallette Bars (Set of 2).png</code></div>
+          </div>
+          <div class="product-body">
+            <div class="product-category">Equipment</div>
+            <h3 class="product-name">Parallette Bars (Set of 2)</h3>
+            <div class="product-price">$59.99</div>
+            <div class="product-features">Non-slip foam grips, stable base, perfect for L-sits and planches</div>
+            <button class="add-to-cart-btn" onclick="addToCart({id:2,name:'Parallette Bars',price:59.99,image:'Products/Parallette Bars (Set of 2).png'})"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="Products/Resistance Bands Set.png" alt="Resistance Bands" onerror="this.classList.add('img-error');">
+            <div class="product-img-placeholder"><i class="fas fa-image"></i><span>Product Image</span><code>Resistance Bands Set.png</code></div>
+          </div>
+          <div class="product-body">
+            <div class="product-category">Accessories</div>
+            <h3 class="product-name">Resistance Bands Set</h3>
+            <div class="product-price">$34.99</div>
+            <div class="product-features">5 resistance levels, latex material, includes door anchor and bag</div>
+            <button class="add-to-cart-btn" onclick="addToCart({id:3,name:'Resistance Bands',price:34.99,image:'Products/Resistance Bands Set.png'})"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="Products/Gymnastics Grips.png" alt="Gymnastics Grips" onerror="this.classList.add('img-error');">
+            <div class="product-img-placeholder"><i class="fas fa-image"></i><span>Product Image</span><code>Gymnastics Grips.png</code></div>
+          </div>
+          <div class="product-body">
+            <div class="product-category">Protection</div>
+            <h3 class="product-name">Gymnastics Grips</h3>
+            <div class="product-price">$29.99</div>
+            <div class="product-features">Leather palm protection, adjustable wrist straps, prevents calluses</div>
+            <button class="add-to-cart-btn" onclick="addToCart({id:4,name:'Gymnastics Grips',price:29.99,image:'Products/Gymnastics Grips.png'})"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="Products/Training T-Shirt.avif" alt="Training T-Shirt" onerror="this.classList.add('img-error');">
+            <div class="product-img-placeholder"><i class="fas fa-image"></i><span>Product Image</span><code>Training T-Shirt.avif</code></div>
+          </div>
+          <div class="product-body">
+            <div class="product-category">Apparel</div>
+            <h3 class="product-name">Training T-Shirt</h3>
+            <div class="product-price">$24.99</div>
+            <div class="product-features">Moisture-wicking fabric, Calistify logo, available in multiple colors</div>
+            <button class="add-to-cart-btn" onclick="addToCart({id:5,name:'Training T-Shirt',price:24.99,image:'Products/Training T-Shirt.avif'})"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="Products/Wrist Wraps (Pair).png" alt="Wrist Wraps" onerror="this.classList.add('img-error');">
+            <div class="product-img-placeholder"><i class="fas fa-image"></i><span>Product Image</span><code>Wrist Wraps (Pair).png</code></div>
+          </div>
+          <div class="product-body">
+            <div class="product-category">Protection</div>
+            <h3 class="product-name">Wrist Wraps (Pair)</h3>
+            <div class="product-price">$19.99</div>
+            <div class="product-features">Heavy-duty elastic, thumb loops, 18-inch length for maximum support</div>
+            <button class="add-to-cart-btn" onclick="addToCart({id:6,name:'Wrist Wraps',price:19.99,image:'Products/Wrist Wraps (Pair).png'})"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="Products/Gymnastic Rings.png" alt="Gymnastic Rings" onerror="this.classList.add('img-error');">
+            <div class="product-img-placeholder"><i class="fas fa-image"></i><span>Product Image</span><code>Gymnastic Rings.png</code></div>
+          </div>
+          <div class="product-body">
+            <div class="product-category">Equipment</div>
+            <h3 class="product-name">Gymnastic Rings</h3>
+            <div class="product-price">$49.99</div>
+            <div class="product-features">Wooden rings, adjustable straps up to 16ft, numbered for even setup</div>
+            <button class="add-to-cart-btn" onclick="addToCart({id:7,name:'Gymnastic Rings',price:49.99,image:'Products/Gymnastic Rings.png'})"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="Products/Complete Guide E-Book.png" alt="Complete Guide E-Book" onerror="this.classList.add('img-error');">
+            <div class="product-img-placeholder"><i class="fas fa-image"></i><span>Product Image</span><code>Complete Guide E-Book.png</code></div>
+          </div>
+          <div class="product-body">
+            <div class="product-category">Education</div>
+            <h3 class="product-name">Complete Guide E-Book</h3>
+            <div class="product-price">$29.99</div>
+            <div class="product-features">Digital PDF, 200+ pages, detailed progressions, meal plans included</div>
+            <button class="add-to-cart-btn" onclick="addToCart({id:8,name:'Complete Guide E-Book',price:29.99,image:'Products/Complete Guide E-Book.png'})"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="Products/Yoga Mat (Premium).png" alt="Yoga Mat" onerror="this.classList.add('img-error');">
+            <div class="product-img-placeholder"><i class="fas fa-image"></i><span>Product Image</span><code>Yoga Mat (Premium).png</code></div>
+          </div>
+          <div class="product-body">
+            <div class="product-category">Accessories</div>
+            <h3 class="product-name">Yoga Mat (Premium)</h3>
+            <div class="product-price">$39.99</div>
+            <div class="product-features">6mm thick, non-slip surface, eco-friendly material, includes strap</div>
+            <button class="add-to-cart-btn" onclick="addToCart({id:9,name:'Yoga Mat',price:39.99,image:'Products/Yoga Mat (Premium).png'})"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section"><h3>CALISTIFY</h3><p style="color: var(--text-secondary); margin-top: 1rem; line-height: 1.8;">Your complete platform for mastering calisthenics.</p></div>
+        <div class="footer-section"><h3>Quick Links</h3><ul><li><a href="about.html">About</a></li><li><a href="training.html">Training</a></li></ul></div>
+        <div class="footer-section"><h3>Account</h3><ul><li><a href="login.html">Login</a></li><li><a href="profile.html">Profile</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Calistify. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function addToCart(product) {
+      window.calistify.cart.addItem(product);
+    }
+  </script>
+</body>
+</html>

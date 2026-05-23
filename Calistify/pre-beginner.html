@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Beginner Level - CALISTIFY</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-logo">CALISTIFY</div>
+      <button class="mobile-nav-close" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="mobile-nav-links" id="mobileNavLinks">
+      <a href="index.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-house"></i></span> Home
+      </a>
+      <a href="about.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-circle-info"></i></span> About
+      </a>
+      <a href="training.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-dumbbell"></i></span> Training
+      </a>
+      <a href="nutrition.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-apple-whole"></i></span> Nutrition
+      </a>
+      <a href="shop.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-bag-shopping"></i></span> Shop
+      </a>
+    </nav>
+    <div class="mobile-nav-divider"></div>
+    <div class="mobile-nav-actions">
+      <a href="login.html" class="btn btn-outline" onclick="closeMobileNav()">Login</a>
+      <a href="register.html" class="btn btn-primary" onclick="closeMobileNav()">Sign Up</a>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo" onclick="window.location.href='index.html'"><img src="images/Calistify logo.png" alt="Calistify" class="logo-img"></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="training.html" class="active">Training</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <div class="user-actions">
+        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+        <div class="cart-icon" onclick="window.location.href='cart.html'">
+          <i class="fas fa-shopping-cart" style="font-size: 1.5rem;"></i>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="register.html" class="btn btn-primary">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Level Hero -->
+  <section class="level-hero">
+    <div class="level-hero-content">
+      <div class="container">
+        <span class="level-badge">Level 01</span>
+        <h1>PRE-BEGINNER <i class="fas fa-seedling" style="font-size:inherit;color:inherit;"></i></h1>
+        <p>Build the foundation for your calisthenics journey. Master basic movements and develop essential strength.</p>
+        
+        <div class="level-info">
+          <div class="info-item">
+            <span class="info-value">40+</span>
+            <span class="info-label">Exercises</span>
+          </div>
+          <div class="info-item">
+            <span class="info-value">8-12</span>
+            <span class="info-label">Weeks</span>
+          </div>
+          <div class="info-item">
+            <span class="info-value">Basic</span>
+            <span class="info-label">Difficulty</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabs -->
+  <div class="content-tabs">
+    <div class="tabs-container">
+      <button class="tab-btn active" onclick="switchTab('overview')">
+        <i class="fas fa-info-circle"></i> Overview
+      </button>
+      <button class="tab-btn" onclick="switchTab('exercises')">
+        <i class="fas fa-dumbbell"></i> Exercises
+      </button>
+      <button class="tab-btn" onclick="switchTab('requirements')">
+        <i class="fas fa-clipboard-check"></i> Requirements
+      </button>
+      <button class="tab-btn" onclick="switchTab('program')">
+        <i class="fas fa-calendar-alt"></i> Training Program
+      </button>
+    </div>
+  </div>
+
+  <!-- Tab Contents -->
+  <div class="container">
+    <!-- Overview Tab -->
+    <div id="overview" class="tab-content active">
+      <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Level Overview</h2>
+      
+      <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem;">
+        The Pre-Beginner level is designed for complete beginners or those returning to fitness after a long break. 
+        This level focuses on building the fundamental strength, mobility, and movement patterns required for safe 
+        and effective calisthenics training.
+      </p>
+
+      <div class="requirements-list">
+        <h3>What You'll Learn</h3>
+        <ul>
+          <li>Proper push-up form (from knees to full)</li>
+          <li>Basic bodyweight squats</li>
+          <li>Plank holds and core engagement</li>
+          <li>Assisted pull-up progressions</li>
+          <li>Basic mobility and flexibility</li>
+          <li>Wrist and joint conditioning</li>
+          <li>Body awareness and control</li>
+          <li>Proper breathing techniques</li>
+        </ul>
+      </div>
+
+      <h3 style="font-family: var(--font-heading); font-size: 2rem; margin: 3rem 0 1.5rem; color: var(--primary);">
+        Training Focus Areas
+      </h3>
+      <div class="grid-3">
+        <div class="card">
+          <h4 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem;">
+            <i class="fas fa-heartbeat" style="color: var(--primary);"></i> Foundation Strength
+          </h4>
+          <p style="color: var(--text-secondary);">
+            Build basic pushing, pulling, and core strength through modified exercises that prepare your body for more advanced movements.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem;">
+            <i class="fas fa-expand-arrows-alt" style="color: var(--primary);"></i> Mobility Work
+          </h4>
+          <p style="color: var(--text-secondary);">
+            Develop the flexibility and joint mobility necessary for safe training and injury prevention throughout your journey.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem;">
+            <i class="fas fa-brain" style="color: var(--primary);"></i> Mind-Muscle Connection
+          </h4>
+          <p style="color: var(--text-secondary);">
+            Learn to feel and control each muscle group, developing the neurological pathways for efficient movement.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercises Tab -->
+    <div id="exercises" class="tab-content">
+      <h2 class="section-title" style="text-align: left; margin-bottom: 1rem;">Exercise Library</h2>
+      <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 3rem;">
+        All exercises include detailed GIFs, form cues, and progression paths. Click any exercise to view full details.
+      </p>
+
+      <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin: 2rem 0 1.5rem; color: var(--primary);">
+        Push Exercises
+      </h3>
+      <div class="exercise-grid">
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Wall Push-Ups</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-easy">Easy</span>
+              <span class="exercise-muscles">Chest, Triceps, Shoulders</span>
+            </div>
+            <p class="exercise-description">
+              Perfect starting point for building pushing strength. Stand facing a wall and perform push-ups at an incline.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">3-4</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">10-15</span>
+                <span class="stat-label">Reps</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">60s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Incline Push-Ups</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-easy">Easy</span>
+              <span class="exercise-muscles">Chest, Triceps, Core</span>
+            </div>
+            <p class="exercise-description">
+              Use an elevated surface (bench, table) to reduce the difficulty while maintaining proper form.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">3-4</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">8-12</span>
+                <span class="stat-label">Reps</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">60s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Knee Push-Ups</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-medium">Medium</span>
+              <span class="exercise-muscles">Chest, Triceps, Shoulders</span>
+            </div>
+            <p class="exercise-description">
+              Modified push-up from knees. Maintain straight line from knees to shoulders, engaging core throughout.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">3-4</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">6-10</span>
+                <span class="stat-label">Reps</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">90s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Eccentric Push-Ups</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-medium">Medium</span>
+              <span class="exercise-muscles">Full Upper Body</span>
+            </div>
+            <p class="exercise-description">
+              Lower yourself slowly (5 seconds) from plank position. This builds strength for full push-ups.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">3</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">5-8</span>
+                <span class="stat-label">Reps</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">90s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin: 3rem 0 1.5rem; color: var(--primary);">
+        Pull Exercises
+      </h3>
+      <div class="exercise-grid">
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Assisted Pull-Up (Band)</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-medium">Medium</span>
+              <span class="exercise-muscles">Back, Biceps</span>
+            </div>
+            <p class="exercise-description">
+              Use resistance bands for assistance. Focus on pulling with your back, not just arms.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">3-4</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">5-8</span>
+                <span class="stat-label">Reps</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">120s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Australian Pull-Ups</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-medium">Medium</span>
+              <span class="exercise-muscles">Back, Biceps, Core</span>
+            </div>
+            <p class="exercise-description">
+              Horizontal pulling exercise using a low bar. Keep body straight, pull chest to bar.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">3-4</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">8-12</span>
+                <span class="stat-label">Reps</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">90s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Dead Hang</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-easy">Easy</span>
+              <span class="exercise-muscles">Grip, Shoulders</span>
+            </div>
+            <p class="exercise-description">
+              Simply hang from a bar. Builds grip strength and shoulder stability essential for pull-ups.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">3-5</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">20-40s</span>
+                <span class="stat-label">Duration</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">60s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin: 3rem 0 1.5rem; color: var(--primary);">
+        Core & Leg Exercises
+      </h3>
+      <div class="exercise-grid">
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Plank Hold</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-medium">Medium</span>
+              <span class="exercise-muscles">Core, Shoulders</span>
+            </div>
+            <p class="exercise-description">
+              Hold straight body position on forearms. Engage core, don't let hips sag. Build up time gradually.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">3-4</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">30-60s</span>
+                <span class="stat-label">Duration</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">60s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Bodyweight Squats</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-easy">Easy</span>
+              <span class="exercise-muscles">Legs, Glutes</span>
+            </div>
+            <p class="exercise-description">
+              Basic squat pattern. Feet shoulder-width, sit back, keep chest up. Build leg strength and mobility.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">3-4</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">12-20</span>
+                <span class="stat-label">Reps</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">60s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Forward Lunges</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-medium">Medium</span>
+              <span class="exercise-muscles">Legs, Glutes, Balance</span>
+            </div>
+            <p class="exercise-description">
+              Step forward, lower back knee. Develops single-leg strength and balance. Keep torso upright.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">3</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">10/leg</span>
+                <span class="stat-label">Reps</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">60s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Requirements Tab -->
+    <div id="requirements" class="tab-content">
+      <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Level Requirements</h2>
+      
+      <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 3rem;">
+        To successfully complete the Pre-Beginner level and progress to Beginner, you should be able to perform 
+        these exercises with good form:
+      </p>
+
+      <div class="requirements-list">
+        <h3>Minimum Standards to Progress</h3>
+        <ul>
+          <li>20 consecutive wall push-ups</li>
+          <li>15 consecutive knee push-ups</li>
+          <li>10 consecutive incline push-ups</li>
+          <li>30-second plank hold</li>
+          <li>20 bodyweight squats</li>
+          <li>10 Australian pull-ups</li>
+          <li>15-second dead hang</li>
+          <li>10 forward lunges each leg</li>
+        </ul>
+      </div>
+
+      <div style="background: linear-gradient(135deg, rgba(255, 77, 0, 0.1), rgba(255, 215, 0, 0.05)); padding: 3rem; border-radius: 16px; margin: 3rem 0; text-align: center;">
+        <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">
+          Take Your Time
+        </h3>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+          There's no rush to progress. Focus on building solid form and strength. Most people complete this 
+          level in 8-12 weeks, but your timeline may vary. Quality over speed!
+        </p>
+      </div>
+    </div>
+
+    <!-- Program Tab -->
+    <div id="program" class="tab-content">
+      <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">8-Week Training Program</h2>
+      
+      <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 3rem;">
+        Follow this structured program 3-4 times per week. Allow at least one rest day between sessions.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary);">
+            Weeks 1-2: Foundation
+          </h3>
+          <h4 style="margin: 1.5rem 0 1rem; color: var(--text-primary);">Workout A (Mon/Wed)</h4>
+          <ul style="list-style: none; color: var(--text-secondary);">
+            <li style="margin-bottom: 0.75rem;">• Wall Push-Ups: 3 sets x 10-15 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Dead Hang: 3 sets x 10-20 seconds</li>
+            <li style="margin-bottom: 0.75rem;">• Bodyweight Squats: 3 sets x 15 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Plank: 3 sets x 20-30 seconds</li>
+          </ul>
+          
+          <h4 style="margin: 1.5rem 0 1rem; color: var(--text-primary);">Workout B (Fri/Sat)</h4>
+          <ul style="list-style: none; color: var(--text-secondary);">
+            <li style="margin-bottom: 0.75rem;">• Incline Push-Ups: 3 sets x 8-12 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Australian Pull-Ups: 3 sets x 5-8 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Forward Lunges: 3 sets x 8/leg</li>
+            <li style="margin-bottom: 0.75rem;">• Side Plank: 3 sets x 15s/side</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary);">
+            Weeks 3-4: Building Strength
+          </h3>
+          <h4 style="margin: 1.5rem 0 1rem; color: var(--text-primary);">Workout A</h4>
+          <ul style="list-style: none; color: var(--text-secondary);">
+            <li style="margin-bottom: 0.75rem;">• Incline Push-Ups: 4 sets x 10-15 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Dead Hang: 4 sets x 15-25 seconds</li>
+            <li style="margin-bottom: 0.75rem;">• Bodyweight Squats: 4 sets x 20 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Plank: 4 sets x 30-45 seconds</li>
+          </ul>
+          
+          <h4 style="margin: 1.5rem 0 1rem; color: var(--text-primary);">Workout B</h4>
+          <ul style="list-style: none; color: var(--text-secondary);">
+            <li style="margin-bottom: 0.75rem;">• Knee Push-Ups: 4 sets x 6-10 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Australian Pull-Ups: 4 sets x 8-12 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Bulgarian Split Squat: 3 sets x 8/leg</li>
+            <li style="margin-bottom: 0.75rem;">• Mountain Climbers: 3 sets x 20 total</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary);">
+            Weeks 5-6: Progression
+          </h3>
+          <h4 style="margin: 1.5rem 0 1rem; color: var(--text-primary);">Workout A</h4>
+          <ul style="list-style: none; color: var(--text-secondary);">
+            <li style="margin-bottom: 0.75rem;">• Knee Push-Ups: 4 sets x 8-12 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Assisted Pull-Ups: 4 sets x 5-8 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Jump Squats: 3 sets x 10 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Plank to Down Dog: 3 sets x 10 reps</li>
+          </ul>
+          
+          <h4 style="margin: 1.5rem 0 1rem; color: var(--text-primary);">Workout B</h4>
+          <ul style="list-style: none; color: var(--text-secondary);">
+            <li style="margin-bottom: 0.75rem;">• Eccentric Push-Ups: 4 sets x 5-8 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Australian Pull-Ups: 4 sets x 10-15 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Step-Ups: 3 sets x 12/leg</li>
+            <li style="margin-bottom: 0.75rem;">• Leg Raises: 3 sets x 8-12 reps</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary);">
+            Weeks 7-8: Testing & Refinement
+          </h3>
+          <h4 style="margin: 1.5rem 0 1rem; color: var(--text-primary);">Workout A</h4>
+          <ul style="list-style: none; color: var(--text-secondary);">
+            <li style="margin-bottom: 0.75rem;">• Eccentric Push-Ups: 4 sets x 6-10 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Assisted Pull-Ups: 4 sets x 6-10 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Squat Jumps: 4 sets x 12 reps</li>
+            <li style="margin-bottom: 0.75rem;">• Plank: 4 sets x 45-60 seconds</li>
+          </ul>
+          
+          <h4 style="margin: 1.5rem 0 1rem; color: var(--text-primary);">Week 8: Testing Week</h4>
+          <p style="color: var(--text-secondary);">
+            Test all requirements to see if you're ready to progress to Beginner level. 
+            Record your numbers and celebrate your progress!
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem; text-align: center;">
+        <a href="beginner.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">
+          Ready for Beginner Level? →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>CALISTIFY</h3>
+          <p style="color: var(--text-secondary); margin-top: 1rem; line-height: 1.8;">
+            Your complete platform for mastering calisthenics. Build strength, control, and achieve 
+            extraordinary results with bodyweight training.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Calisthenics</a></li>
+            <li><a href="training.html">Training Programs</a></li>
+            <li><a href="nutrition.html">Nutrition Guide</a></li>
+            <li><a href="shop.html">Equipment Shop</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Account</h3>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Sign Up</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="progress.html">Track Progress</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Calistify. All rights reserved. Transform your body through the power of calisthenics.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function switchTab(tabName) {
+      // Hide all tabs
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      
+      // Remove active class from all buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      // Show selected tab
+      document.getElementById(tabName).classList.add('active');
+      
+      // Add active class to clicked button
+      event.target.classList.add('active');
+    }
+  </script>
+
+  <script>    // Highlight active nav link
+    (function(){
+      const links = document.querySelectorAll('.mobile-nav-links a');
+      const page  = window.location.pathname.split('/').pop() || 'index.html';
+      links.forEach(a => { if (a.getAttribute('href') === page) a.classList.add('active'); });
+    })();
+
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      const btn = document.getElementById('hamburgerBtn');
+      const isOpen = nav.classList.contains('open');
+      if (isOpen) { closeMobileNav(); } else {
+        nav.classList.add('open');
+        btn.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        // backdrop
+        let bd = document.getElementById('mobileNavBackdrop');
+        if (!bd) {
+          bd = document.createElement('div');
+          bd.id = 'mobileNavBackdrop';
+          bd.className = 'mobile-nav-backdrop open';
+          bd.onclick = closeMobileNav;
+          document.body.appendChild(bd);
+        } else { bd.classList.add('open'); }
+      }
+    }
+    function closeMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      const btn = document.getElementById('hamburgerBtn');
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow = '';
+      const bd = document.getElementById('mobileNavBackdrop');
+      if (bd) bd.classList.remove('open');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
+  </script>
+
+</body>
+</html>

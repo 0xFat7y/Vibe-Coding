@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CALISTIFY - Transform Your Body with Calisthenics</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+</head>
+<body>
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-logo">CALISTIFY</div>
+      <button class="mobile-nav-close" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <nav class="mobile-nav-links" id="mobileNavLinks">
+      <a href="index.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-house"></i></span> Home
+      </a>
+      <a href="about.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-circle-info"></i></span> About
+      </a>
+      <a href="training.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-dumbbell"></i></span> Training
+      </a>
+      <a href="nutrition.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-apple-whole"></i></span> Nutrition
+      </a>
+      <a href="shop.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-bag-shopping"></i></span> Shop
+      </a>
+    </nav>
+
+    <div class="mobile-nav-divider"></div>
+
+    <div class="mobile-nav-actions">
+      <a href="login.html" class="btn btn-outline" onclick="closeMobileNav()">Login</a>
+      <a href="register.html" class="btn btn-primary" onclick="closeMobileNav()">Sign Up</a>
+    </div>
+  </div>
+
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo"><img src="images/Calistify logo.png" alt="Calistify" class="logo-img"></div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <div class="user-actions">
+        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+        <div class="cart-icon" onclick="window.location.href='cart.html'">
+          <i class="fas fa-shopping-cart" style="font-size: 1.5rem;"></i>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="register.html" class="btn btn-primary">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">CALISTIFY</h1>
+      <h2 class="hero-subtitle">Transform Your Body. Master Your Strength.</h2>
+      <p class="hero-description">
+        The ultimate platform for mastering calisthenics. From complete beginner to expert athlete, 
+        we provide structured training programs, nutrition guidance, and everything you need to achieve 
+        extraordinary bodyweight strength and control.
+      </p>
+      <div class="hero-cta">
+        <a href="training.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 3rem;">
+          <i class="fas fa-dumbbell"></i> Start Training
+        </a>
+        <a href="about.html" class="btn btn-outline" style="font-size: 1.1rem; padding: 1.2rem 3rem;">
+          <i class="fas fa-info-circle"></i> Learn More
+        </a>
+      </div>
+      
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Exercises</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Levels</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100+</span>
+          <span class="stat-label">Nutrition Guides</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">10K+</span>
+          <span class="stat-label">Athletes</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">WHY CALISTIFY</h2>
+      <p class="section-subtitle">Everything you need to master bodyweight training</p>
+      
+      <div class="feature-grid">
+        <div class="feature-card">
+          <i class="fas fa-graduation-cap feature-icon"></i>
+          <h3 class="feature-title">Structured Learning</h3>
+          <p class="feature-description">
+            Progressive training paths from absolute beginner to expert. Each level builds upon the last, 
+            ensuring solid fundamentals and consistent growth.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-video feature-icon"></i>
+          <h3 class="feature-title">Visual Guides</h3>
+          <p class="feature-description">
+            High-quality GIFs and images for every exercise. See proper form and technique demonstrated 
+            clearly for maximum safety and effectiveness.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-apple-alt feature-icon"></i>
+          <h3 class="feature-title">Nutrition Plans</h3>
+          <p class="feature-description">
+            Comprehensive nutrition guidance tailored for calisthenics athletes. Meal plans, recipes, 
+            and dietary advice to fuel your training.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-chart-line feature-icon"></i>
+          <h3 class="feature-title">Track Progress</h3>
+          <p class="feature-description">
+            Monitor your journey with our progress tracking system. Earn badges and celebrate milestones 
+            as you advance through levels.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-shopping-bag feature-icon"></i>
+          <h3 class="feature-title">Quality Equipment</h3>
+          <p class="feature-description">
+            Access to essential calisthenics equipment at competitive prices. Everything you need 
+            to train effectively at home or outdoors.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-users feature-icon"></i>
+          <h3 class="feature-title">Community Support</h3>
+          <p class="feature-description">
+            Join thousands of athletes on the same journey. Share progress, get motivated, 
+            and learn from experienced practitioners.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Levels Overview -->
+  <section class="levels-overview">
+    <div class="container">
+      <h2 class="section-title">TRAINING LEVELS</h2>
+      <p class="section-subtitle">Choose your path and start your transformation</p>
+      
+      <div class="levels-grid">
+        <div class="level-card" onclick="window.location.href='pre-beginner.html'">
+          <div class="level-header pre-beginner">
+            <div class="level-icon"><i class="fas fa-seedling" style="font-size:inherit;color:inherit;"></i></div>
+            <h3 class="level-title">PRE-BEGINNER</h3>
+          </div>
+          <div class="level-body">
+            <p class="level-description">
+              Build the foundation. Learn basic movements and develop the minimum strength requirements 
+              to begin your calisthenics journey safely.
+            </p>
+            <div class="level-stats">
+              <div class="level-stat">
+                <span class="level-stat-value">40+</span>
+                <span class="level-stat-label">Exercises</span>
+              </div>
+              <div class="level-stat">
+                <span class="level-stat-value">8-12</span>
+                <span class="level-stat-label">Weeks</span>
+              </div>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;">Start Level</button>
+          </div>
+        </div>
+
+        <div class="level-card" onclick="window.location.href='beginner.html'">
+          <div class="level-header beginner">
+            <div class="level-icon"><i class="fas fa-dumbbell" style="font-size:inherit;color:inherit;"></i></div>
+            <h3 class="level-title">BEGINNER</h3>
+          </div>
+          <div class="level-body">
+            <p class="level-description">
+              Master fundamental skills. Perfect your push-ups, pull-ups, dips, and develop 
+              solid bodyweight strength and control.
+            </p>
+            <div class="level-stats">
+              <div class="level-stat">
+                <span class="level-stat-value">80+</span>
+                <span class="level-stat-label">Exercises</span>
+              </div>
+              <div class="level-stat">
+                <span class="level-stat-value">12-16</span>
+                <span class="level-stat-label">Weeks</span>
+              </div>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;">Start Level</button>
+          </div>
+        </div>
+
+        <div class="level-card" onclick="window.location.href='intermediate.html'">
+          <div class="level-header intermediate">
+            <div class="level-icon"><i class="fas fa-fire" style="font-size:inherit;color:inherit;"></i></div>
+            <h3 class="level-title">INTERMEDIATE</h3>
+          </div>
+          <div class="level-body">
+            <p class="level-description">
+              Advanced progressions. Learn muscle-ups, front levers, handstand push-ups, 
+              and other impressive bodyweight skills.
+            </p>
+            <div class="level-stats">
+              <div class="level-stat">
+                <span class="level-stat-value">120+</span>
+                <span class="level-stat-label">Exercises</span>
+              </div>
+              <div class="level-stat">
+                <span class="level-stat-value">16-24</span>
+                <span class="level-stat-label">Weeks</span>
+              </div>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;">Start Level</button>
+          </div>
+        </div>
+
+        <div class="level-card" onclick="window.location.href='expert.html'">
+          <div class="level-header expert">
+            <div class="level-icon"><i class="fas fa-bolt" style="font-size:inherit;color:inherit;"></i></div>
+            <h3 class="level-title">EXPERT</h3>
+          </div>
+          <div class="level-body">
+            <p class="level-description">
+              Elite skills. Master planches, one-arm pull-ups, iron crosses, and the most 
+              demanding calisthenics movements.
+            </p>
+            <div class="level-stats">
+              <div class="level-stat">
+                <span class="level-stat-value">150+</span>
+                <span class="level-stat-label">Exercises</span>
+              </div>
+              <div class="level-stat">
+                <span class="level-stat-value">24+</span>
+                <span class="level-stat-label">Weeks</span>
+              </div>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;">Start Level</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">READY TO TRANSFORM?</h2>
+        <p class="cta-description">
+          Join thousands of athletes who have already started their calisthenics journey. 
+          Your transformation begins today.
+        </p>
+        <div class="cta-buttons">
+          <a href="register.html" class="btn">Create Free Account</a>
+          <a href="training.html" class="btn">Browse Training Programs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>CALISTIFY</h3>
+          <p style="color: var(--text-secondary); margin-top: 1rem; line-height: 1.8;">
+            Your complete platform for mastering calisthenics. Build strength, control, and achieve 
+            extraordinary results with bodyweight training.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Calisthenics</a></li>
+            <li><a href="training.html">Training Programs</a></li>
+            <li><a href="nutrition.html">Nutrition Guide</a></li>
+            <li><a href="shop.html">Equipment Shop</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Account</h3>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Sign Up</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="progress.html">Track Progress</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Calistify. All rights reserved. Transform your body through the power of calisthenics.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  
+
+</body>
+</html>

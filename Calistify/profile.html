@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile - CALISTIFY</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ══════════════════════════════════════════
+       PROFILE PAGE – PREMIUM REDESIGN
+    ══════════════════════════════════════════ */
+
+    .profile-page { padding: 100px 0 4rem; min-height: 100vh; }
+
+    /* ── Two-column layout ── */
+    .profile-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* ════ LEFT SIDEBAR ════ */
+    .profile-sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    /* ── Identity card ── */
+    .identity-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+    .identity-banner {
+      height: 80px;
+      background: linear-gradient(135deg, #B8860B 0%, #FFD700 50%, #FFF0A0 100%);
+      position: relative;
+    }
+    .identity-banner::after {
+      content: 'CALISTIFY';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      letter-spacing: 4px;
+      color: rgba(0,0,0,0.15);
+      font-weight: 900;
+    }
+    .identity-body { padding: 0 1.5rem 1.5rem; }
+
+    /* ── Photo ── */
+    .profile-photo-wrapper {
+      position: relative;
+      width: 90px;
+      height: 90px;
+      margin: -45px auto 1rem;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .profile-photo {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      border: 3px solid var(--bg-card);
+      background: var(--bg-tertiary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.8rem; color: var(--text-muted);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    .profile-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+    .photo-overlay {
+      position: absolute; inset: 0; border-radius: 50%;
+      background: rgba(0,0,0,0.55);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.2s;
+      color: white; font-size: 1.3rem;
+    }
+    .profile-photo-wrapper:hover .photo-overlay { opacity: 1; }
+    #photoInput { display: none; }
+
+    /* ── Identity text ── */
+    .identity-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem; letter-spacing: 2px;
+      background: var(--gradient-gold);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: center; margin-bottom: 0.2rem;
+    }
+    .identity-username {
+      font-family: var(--font-heading); font-size: 0.95rem;
+      color: var(--primary); text-align: center;
+      font-weight: 700; letter-spacing: 1px; margin-bottom: 0.3rem;
+    }
+    .identity-email {
+      font-size: 0.82rem; color: var(--text-muted);
+      text-align: center; margin-bottom: 0.5rem;
+    }
+    .identity-since {
+      font-size: 0.78rem; color: var(--text-muted);
+      text-align: center; margin-bottom: 1.2rem;
+    }
+
+    /* ── Edit button inside identity ── */
+    .edit-profile-btn {
+      width: 100%;
+      padding: 0.65rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-secondary);
+      font-family: var(--font-heading);
+      font-weight: 600; font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+    }
+    .edit-profile-btn:hover {
+      border-color: var(--primary); color: var(--primary);
+      background: rgba(255,215,0,0.05);
+    }
+
+    /* ── Sidebar stat mini cards ── */
+    .sidebar-stats {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.2rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+    }
+    .mini-stat {
+      background: var(--bg-secondary);
+      border-radius: 10px;
+      padding: 0.9rem 0.75rem;
+      text-align: center;
+      border: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .mini-stat:hover { border-color: var(--border); }
+    .mini-stat-value {
+      font-family: var(--font-display);
+      font-size: 1.6rem; color: var(--primary);
+      display: block; margin-bottom: 0.2rem; line-height: 1;
+    }
+    .mini-stat-label {
+      font-size: 0.7rem; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+
+    /* ── Sidebar quick actions ── */
+    .sidebar-actions {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.2rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .sidebar-action-btn {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.8rem 1rem;
+      background: transparent; border: none;
+      border-radius: 10px; cursor: pointer;
+      color: var(--text-secondary);
+      font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      width: 100%; text-align: left;
+    }
+    .sidebar-action-btn i { width: 18px; text-align: center; color: var(--primary); font-size: 0.95rem; }
+    .sidebar-action-btn:hover { background: var(--bg-secondary); color: var(--primary); }
+    .sidebar-action-btn.danger:hover { background: rgba(255,68,68,0.08); color: #ff4444; }
+    .sidebar-action-btn.danger i { color: #ff4444; }
+
+    /* ════ RIGHT MAIN ════ */
+    .profile-main { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    /* ── Section card ── */
+    .p-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .p-card:focus-within { border-color: rgba(255,215,0,0.35); }
+    .p-card-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 1.2rem; padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .p-card-title {
+      font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700;
+      color: var(--text-primary);
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .p-card-title i { color: var(--primary); font-size: 1rem; }
+
+    /* ── Bio ── */
+    .bio-textarea {
+      width: 100%; min-height: 110px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border); border-radius: 10px;
+      color: var(--text-primary); font-family: var(--font-body);
+      font-size: 0.95rem; line-height: 1.7;
+      padding: 0.9rem 1.1rem; resize: vertical; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .bio-textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(255,215,0,0.1); }
+    .bio-textarea::placeholder { color: var(--text-muted); }
+    .char-count { font-size: 0.75rem; color: var(--text-muted); text-align: right; margin-top: 0.4rem; }
+
+    /* ── Notes ── */
+    .notes-list { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem; }
+    .note-item {
+      background: var(--bg-secondary);
+      border-radius: 10px; border-left: 3px solid var(--primary);
+      padding: 0.8rem 1rem;
+      display: flex; align-items: flex-start; gap: 0.75rem;
+    }
+    .note-body { flex: 1; }
+    .note-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; word-break: break-word; }
+    .note-date { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.25rem; }
+    .note-del {
+      background: none; border: none; color: var(--text-muted); cursor: pointer;
+      font-size: 0.85rem; padding: 2px 5px; border-radius: 4px; flex-shrink: 0;
+      transition: color 0.15s, background 0.15s;
+    }
+    .note-del:hover { color: #ff4444; background: rgba(255,68,68,0.1); }
+    .note-input-row { display: flex; gap: 0.6rem; align-items: flex-end; }
+    .note-input {
+      flex: 1; background: var(--bg-secondary);
+      border: 1px solid var(--border); border-radius: 10px;
+      color: var(--text-primary); font-family: var(--font-body); font-size: 0.9rem;
+      padding: 0.7rem 0.9rem; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      resize: none; min-height: 42px; max-height: 100px;
+    }
+    .note-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(255,215,0,0.1); }
+    .note-input::placeholder { color: var(--text-muted); }
+    .note-add-btn {
+      background: var(--gradient-gold); color: var(--bg-primary);
+      border: none; border-radius: 10px;
+      padding: 0.7rem 1.1rem;
+      font-family: var(--font-heading); font-weight: 700; font-size: 0.88rem;
+      cursor: pointer; white-space: nowrap; height: 42px;
+      display: flex; align-items: center; gap: 0.4rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .note-add-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-glow); }
+    .notes-empty { text-align: center; color: var(--text-muted); font-size: 0.88rem; padding: 2rem; }
+    .notes-empty i { font-size: 2rem; opacity: 0.25; display: block; margin-bottom: 0.5rem; }
+
+    /* ── Badges ── */
+    .badges-grid-pro {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+    }
+    .badge-pro {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-light);
+      border-radius: 12px; padding: 1rem 0.5rem;
+      text-align: center; opacity: 0.45;
+      transition: all 0.2s; position: relative; overflow: hidden;
+    }
+    .badge-pro.earned {
+      opacity: 1;
+      border-color: var(--primary);
+      background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(197,160,40,0.04));
+    }
+    .badge-pro.earned::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(255,215,0,0.12), transparent 70%);
+    }
+    .badge-pro-icon { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+    .badge-pro-icon i { color: var(--primary); }
+    .badge-pro-name { font-family: var(--font-heading); font-size: 0.82rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.2rem; }
+    .badge-pro-req { font-size: 0.72rem; color: var(--text-muted); }
+    .badge-lock { position: absolute; top: 6px; right: 6px; font-size: 0.65rem; color: var(--text-muted); opacity: 0.5; }
+    .badge-pro.earned .badge-lock { display: none; }
+
+    /* ── Save btn ── */
+    .p-save-btn {
+      background: var(--gradient-gold); color: var(--bg-primary);
+      border: none; border-radius: 8px;
+      padding: 0.45rem 1.1rem;
+      font-family: var(--font-heading); font-weight: 700; font-size: 0.82rem;
+      cursor: pointer; display: flex; align-items: center; gap: 0.4rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .p-save-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-glow); }
+
+    /* ════ EDIT MODAL ════ */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,0.75); backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px; padding: 2rem;
+      width: 100%; max-width: 460px;
+      transform: translateY(20px);
+      transition: transform 0.25s ease;
+      position: relative;
+    }
+    .modal-overlay.open .modal-box { transform: translateY(0); }
+    .modal-title {
+      font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 2px;
+      background: var(--gradient-gold);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 1.5rem;
+    }
+    .modal-close {
+      position: absolute; top: 1.2rem; right: 1.2rem;
+      background: var(--bg-secondary); border: 1px solid var(--border);
+      border-radius: 8px; width: 32px; height: 32px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: var(--text-secondary); font-size: 0.9rem;
+      transition: all 0.15s;
+    }
+    .modal-close:hover { border-color: var(--primary); color: var(--primary); }
+    .modal-field { margin-bottom: 1.2rem; }
+    .modal-label {
+      display: block; font-family: var(--font-heading); font-weight: 600;
+      font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.5rem;
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+    .modal-input {
+      width: 100%; background: var(--bg-secondary);
+      border: 1px solid var(--border); border-radius: 10px;
+      color: var(--text-primary); font-family: var(--font-body);
+      font-size: 1rem; padding: 0.8rem 1rem; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .modal-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(255,215,0,0.1); }
+    .modal-input-prefix {
+      position: relative;
+    }
+    .modal-input-prefix span {
+      position: absolute; left: 1rem; top: 50%; transform: translateY(-50%);
+      color: var(--primary); font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem;
+    }
+    .modal-input-prefix .modal-input { padding-left: 2rem; }
+    .modal-actions { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+    .modal-save-btn {
+      flex: 1; background: var(--gradient-gold); color: var(--bg-primary);
+      border: none; border-radius: 10px; padding: 0.9rem;
+      font-family: var(--font-heading); font-weight: 700; font-size: 1rem;
+      cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .modal-save-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-intense); }
+    .modal-cancel-btn {
+      background: transparent; border: 1px solid var(--border); color: var(--text-secondary);
+      border-radius: 10px; padding: 0.9rem 1.5rem;
+      font-family: var(--font-heading); font-weight: 600; font-size: 1rem;
+      cursor: pointer; transition: all 0.15s;
+    }
+    .modal-cancel-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* ════ MOBILE ════ */
+    @media (max-width: 900px) {
+      .profile-layout { grid-template-columns: 1fr; }
+      .profile-sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .identity-card { grid-column: 1 / -1; }
+      .badges-grid-pro { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .profile-page { padding: 80px 0 3rem; }
+      .profile-sidebar { grid-template-columns: 1fr; }
+      .p-card { padding: 1.1rem; }
+      .badges-grid-pro { grid-template-columns: repeat(2, 1fr); }
+      .note-input-row { flex-direction: column; }
+      .note-add-btn { width: 100%; justify-content: center; }
+      .modal-box { padding: 1.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mobile Nav -->
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-logo">CALISTIFY</div>
+      <button class="mobile-nav-close" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="mobile-nav-links" id="mobileNavLinks">
+      <a href="index.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-house"></i></span> Home
+      </a>
+      <a href="about.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-circle-info"></i></span> About
+      </a>
+      <a href="training.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-dumbbell"></i></span> Training
+      </a>
+      <a href="nutrition.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-apple-whole"></i></span> Nutrition
+      </a>
+      <a href="shop.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-bag-shopping"></i></span> Shop
+      </a>
+    </nav>
+    <div class="mobile-nav-divider"></div>
+    <div class="mobile-nav-actions">
+      <a href="login.html" class="btn btn-outline" onclick="closeMobileNav()">Login</a>
+      <a href="register.html" class="btn btn-primary" onclick="closeMobileNav()">Sign Up</a>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- Edit Profile Modal -->
+  <div class="modal-overlay" id="editModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+      <div class="modal-title">EDIT PROFILE</div>
+
+      <div class="modal-field">
+        <label class="modal-label"><i class="fas fa-user" style="color:var(--primary);margin-right:6px;"></i>Full Name</label>
+        <input class="modal-input" id="editName" type="text" placeholder="Your full name" maxlength="60">
+      </div>
+
+      <div class="modal-field">
+        <label class="modal-label"><i class="fas fa-at" style="color:var(--primary);margin-right:6px;"></i>Username</label>
+        <div class="modal-input-prefix">
+          <span>@</span>
+          <input class="modal-input" id="editUsername" type="text" placeholder="your_username"
+            pattern="[a-zA-Z0-9_]+" maxlength="30">
+        </div>
+        <small style="font-size:0.75rem;color:var(--text-muted);margin-top:0.3rem;display:block;">Letters, numbers and _ only</small>
+      </div>
+
+      <div class="modal-actions">
+        <button class="modal-save-btn" onclick="saveProfileEdit()"><i class="fas fa-floppy-disk"></i> Save Changes</button>
+        <button class="modal-cancel-btn" onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <img src="images/Calistify logo.png" alt="Calistify" class="logo-img">
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <div class="user-actions">
+        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileNav()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="cart-icon" onclick="window.location.href='cart.html'">
+          <i class="fas fa-shopping-cart" style="font-size:1.4rem;"></i>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="auth-buttons"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page -->
+  <div class="profile-page">
+    <div class="container">
+      <div class="profile-layout">
+
+        <!-- ════ LEFT SIDEBAR ════ -->
+        <aside class="profile-sidebar">
+
+          <!-- Identity card -->
+          <div class="identity-card">
+            <div class="identity-banner"></div>
+            <div class="identity-body">
+              <div class="profile-photo-wrapper" onclick="document.getElementById('photoInput').click()" title="Change photo">
+                <div class="profile-photo" id="profilePhoto">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="photo-overlay"><i class="fas fa-camera"></i></div>
+              </div>
+              <input type="file" id="photoInput" accept="image/*" onchange="uploadPhoto(event)">
+
+              <div class="identity-name" id="idName">ATHLETE</div>
+              <div class="identity-username" id="idUsername"></div>
+              <div class="identity-email" id="idEmail"></div>
+              <div class="identity-since">Member since <span id="idSince">2026</span></div>
+
+              <button class="edit-profile-btn" onclick="openModal()">
+                <i class="fas fa-pen-to-square"></i> Edit Profile
+              </button>
+            </div>
+          </div>
+
+          <!-- Stats mini grid -->
+          <div class="sidebar-stats">
+            <div class="mini-stat">
+              <span class="mini-stat-value" id="statExercises">0</span>
+              <span class="mini-stat-label">Exercises</span>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-stat-value" id="statBadges">0</span>
+              <span class="mini-stat-label">Badges</span>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-stat-value" id="statDays">0</span>
+              <span class="mini-stat-label">Days Active</span>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-stat-value" id="statLevel" style="font-size:1rem;padding-top:0.3rem;">—</span>
+              <span class="mini-stat-label">Level</span>
+            </div>
+          </div>
+
+          <!-- Quick actions -->
+          <div class="sidebar-actions">
+            <a href="training.html" class="sidebar-action-btn">
+              <i class="fas fa-dumbbell"></i> Continue Training
+            </a>
+            <a href="shop.html" class="sidebar-action-btn">
+              <i class="fas fa-bag-shopping"></i> Visit Shop
+            </a>
+            <a href="nutrition.html" class="sidebar-action-btn">
+              <i class="fas fa-apple-whole"></i> Nutrition Guide
+            </a>
+            <button class="sidebar-action-btn danger" onclick="window.calistify.auth.logout()">
+              <i class="fas fa-right-from-bracket"></i> Log Out
+            </button>
+          </div>
+
+        </aside>
+
+        <!-- ════ RIGHT MAIN ════ -->
+        <main class="profile-main">
+
+          <!-- About Me / Bio -->
+          <div class="p-card">
+            <div class="p-card-header">
+              <div class="p-card-title"><i class="fas fa-user-pen"></i> About Me</div>
+              <button class="p-save-btn" onclick="saveBio()">
+                <i class="fas fa-floppy-disk"></i> Save
+              </button>
+            </div>
+            <textarea class="bio-textarea" id="bioTextarea" maxlength="500"
+              placeholder="Tell the world about yourself — your goals, training experience, favourite movements…"
+              oninput="updateBioCount()"></textarea>
+            <div class="char-count"><span id="bioCount">0</span> / 500</div>
+          </div>
+
+          <!-- Notes -->
+          <div class="p-card">
+            <div class="p-card-header">
+              <div class="p-card-title"><i class="fas fa-note-sticky"></i> My Notes</div>
+              <span style="font-size:0.8rem;color:var(--text-muted);" id="noteCount">0 notes</span>
+            </div>
+            <div class="notes-list" id="notesList"></div>
+            <div class="note-input-row">
+              <textarea class="note-input" id="noteInput"
+                placeholder="Jot down a tip, a PR, a reminder… (Enter to add)"
+                maxlength="300" rows="1"
+                onkeydown="handleNoteKey(event)"></textarea>
+              <button class="note-add-btn" onclick="addNote()">
+                <i class="fas fa-plus"></i> Add
+              </button>
+            </div>
+          </div>
+
+          <!-- Badges -->
+          <div class="p-card">
+            <div class="p-card-header">
+              <div class="p-card-title"><i class="fas fa-medal"></i> Achievements</div>
+              <span style="font-size:0.8rem;color:var(--text-muted);">Complete exercises to unlock</span>
+            </div>
+            <div class="badges-grid-pro">
+              <div class="badge-pro" id="badge-first">
+                <i class="fas fa-lock badge-lock"></i>
+                <span class="badge-pro-icon"><i class="fas fa-trophy"></i></span>
+                <div class="badge-pro-name">First Steps</div>
+                <div class="badge-pro-req">5 exercises</div>
+              </div>
+              <div class="badge-pro" id="badge-strong">
+                <i class="fas fa-lock badge-lock"></i>
+                <span class="badge-pro-icon"><i class="fas fa-dumbbell"></i></span>
+                <div class="badge-pro-name">Getting Strong</div>
+                <div class="badge-pro-req">20 exercises</div>
+              </div>
+              <div class="badge-pro" id="badge-dedicated">
+                <i class="fas fa-lock badge-lock"></i>
+                <span class="badge-pro-icon"><i class="fas fa-fire"></i></span>
+                <div class="badge-pro-name">Dedicated</div>
+                <div class="badge-pro-req">50 exercises</div>
+              </div>
+              <div class="badge-pro" id="badge-master">
+                <i class="fas fa-lock badge-lock"></i>
+                <span class="badge-pro-icon"><i class="fas fa-bolt"></i></span>
+                <div class="badge-pro-name">Master</div>
+                <div class="badge-pro-req">100 exercises</div>
+              </div>
+            </div>
+          </div>
+
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>CALISTIFY</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Calistify. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // ── Auth guard ──
+    if (!window.calistify.auth.isLoggedIn()) {
+      window.location.href = 'login.html';
+    }
+
+    const STORAGE_KEY = 'calistify_profile_extra';
+
+    function loadExtra() {
+      const r = localStorage.getItem(STORAGE_KEY);
+      return r ? JSON.parse(r) : { bio: '', notes: [], photo: null };
+    }
+    function saveExtra(data) { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }
+
+    // ── Bootstrap ──
+    let user     = window.calistify.auth.currentUser;
+    const prog   = window.calistify.progressTracker.getProgress();
+    const extra  = loadExtra();
+
+    function populateIdentity() {
+      user = window.calistify.auth.currentUser;
+      document.getElementById('idName').textContent     = user.name.toUpperCase();
+      const unEl = document.getElementById('idUsername');
+      unEl.textContent = user.username ? '@' + user.username : '';
+      unEl.style.display = user.username ? 'block' : 'none';
+      document.getElementById('idEmail').textContent    = user.email;
+    }
+    populateIdentity();
+
+    // Stats
+    const joinDate = new Date(prog.joinDate);
+    document.getElementById('idSince').textContent      = joinDate.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
+    document.getElementById('statExercises').textContent = prog.completedExercises.length;
+    document.getElementById('statBadges').textContent   = prog.badges.length;
+    document.getElementById('statDays').textContent     = Math.floor((new Date() - joinDate) / 86400000);
+    document.getElementById('statLevel').textContent    = prog.currentLevel.replace('-',' ').split(' ').map(w=>w[0].toUpperCase()+w.slice(1)).join(' ');
+
+    // Badges
+    const badgeMap = {
+      'First Steps':'badge-first','Getting Strong':'badge-strong',
+      'Dedicated Athlete':'badge-dedicated','Calisthenics Master':'badge-master'
+    };
+    prog.badges.forEach(b => { const el=document.getElementById(badgeMap[b]); if(el) el.classList.add('earned'); });
+
+    // ── Photo ──
+    function uploadPhoto(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = ev => {
+        renderPhoto(ev.target.result);
+        const ex = loadExtra(); ex.photo = ev.target.result; saveExtra(ex);
+        window.calistify.showToast('Photo updated! 📸', 'success');
+      };
+      reader.readAsDataURL(file);
+    }
+    function renderPhoto(src) {
+      const box = document.getElementById('profilePhoto');
+      box.innerHTML = src ? `<img src="${src}" alt="Profile">` : `<i class="fas fa-user"></i>`;
+    }
+    if (extra.photo) renderPhoto(extra.photo);
+
+    // ── Bio ──
+    const bioTA = document.getElementById('bioTextarea');
+    bioTA.value = extra.bio || '';
+    updateBioCount();
+    function updateBioCount() { document.getElementById('bioCount').textContent = bioTA.value.length; }
+    function saveBio() {
+      const ex = loadExtra(); ex.bio = bioTA.value.trim(); saveExtra(ex);
+      window.calistify.showToast('Bio saved!', 'success');
+    }
+
+    // ── Notes ──
+    function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    function renderNotes() {
+      const ex = loadExtra();
+      const list = document.getElementById('notesList');
+      document.getElementById('noteCount').textContent = ex.notes.length + ' note' + (ex.notes.length!==1?'s':'');
+      if (!ex.notes.length) {
+        list.innerHTML = `<div class="notes-empty"><i class="fas fa-note-sticky"></i>No notes yet. Add your first one below!</div>`;
+        return;
+      }
+      list.innerHTML = ex.notes.map((n,i) => `
+        <div class="note-item">
+          <div class="note-body">
+            <div class="note-text">${esc(n.text)}</div>
+            <div class="note-date"><i class="fas fa-clock" style="margin-right:3px;"></i>${n.date}</div>
+          </div>
+          <button class="note-del" onclick="deleteNote(${i})" title="Delete"><i class="fas fa-trash-can"></i></button>
+        </div>`).join('');
+    }
+    function addNote() {
+      const inp = document.getElementById('noteInput');
+      const txt = inp.value.trim(); if (!txt) return;
+      const ex = loadExtra();
+      ex.notes.unshift({ text: txt, date: new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'}) });
+      saveExtra(ex); inp.value = ''; renderNotes();
+      window.calistify.showToast('Note added! 📝', 'success');
+    }
+    function deleteNote(i) {
+      const ex = loadExtra(); ex.notes.splice(i,1); saveExtra(ex); renderNotes();
+    }
+    function handleNoteKey(e) { if (e.key==='Enter'&&!e.shiftKey){ e.preventDefault(); addNote(); } }
+    renderNotes();
+
+    // ── Edit Modal ──
+    function openModal() {
+      document.getElementById('editName').value     = user.name;
+      document.getElementById('editUsername').value = user.username || '';
+      document.getElementById('editModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('editModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function saveProfileEdit() {
+      const newName = document.getElementById('editName').value.trim();
+      const newUser = document.getElementById('editUsername').value.trim().toLowerCase();
+      if (!newName) { window.calistify.showToast('Name cannot be empty!','error'); return; }
+      if (newUser && !/^[a-zA-Z0-9_]+$/.test(newUser)) {
+        window.calistify.showToast('Username: letters, numbers, _ only','error'); return;
+      }
+      const ok = window.calistify.auth.updateProfile(newName, newUser);
+      if (ok) {
+        populateIdentity();
+        closeModal();
+        window.calistify.showToast('Profile updated! ✅','success');
+      }
+    }
+    // Close modal on overlay click
+    document.getElementById('editModal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key==='Escape'){ closeModal(); closeMobileNav(); } });
+  </script>
+  <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      const btn = document.getElementById('hamburgerBtn');
+      if (nav.classList.contains('open')) { closeMobileNav(); return; }
+      nav.classList.add('open'); btn.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      let bd = document.getElementById('mobileNavBackdrop');
+      if (!bd) {
+        bd = document.createElement('div');
+        bd.id = 'mobileNavBackdrop';
+        bd.className = 'mobile-nav-backdrop open';
+        bd.onclick = closeMobileNav;
+        document.body.appendChild(bd);
+      } else { bd.classList.add('open'); }
+    }
+    function closeMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      const btn = document.getElementById('hamburgerBtn');
+      nav.classList.remove('open'); btn.classList.remove('open');
+      document.body.style.overflow = '';
+      const bd = document.getElementById('mobileNavBackdrop');
+      if (bd) bd.classList.remove('open');
+    }
+  </script>
+</body>
+</html>

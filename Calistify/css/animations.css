@@ -1,0 +1,91 @@
+/* ============================================
+   ADVANCED ANIMATIONS – GOLD PREMIUM ✨
+   CALISTIFY - Essential Effects Only
+   ============================================ */
+
+/* Neon Glow Effect - Gold */
+.neon-border {
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 15px var(--primary-glow);
+  transition: box-shadow 0.2s ease;
+}
+
+.neon-border:hover {
+  box-shadow: 0 0 25px var(--primary-glow);
+}
+
+/* Fire Text - Gold Version */
+.fire-text {
+  background: linear-gradient(to top, #B8860B, #FFD700, #FFFFFF);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Typewriter Effect */
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid var(--primary);
+  white-space: nowrap;
+  animation: 
+    typing 3s steps(30, end),
+    blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--primary); }
+}
+
+/* Loading Bar - Gold Gradient */
+.loading-bar {
+  width: 100%;
+  height: 4px;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(90deg, #B8860B, #FFD700);
+  border-radius: 10px;
+  animation: loadingSlide 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingSlide {
+  0% { left: -40%; }
+  100% { left: 100%; }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .typewriter {
+    white-space: normal;
+    border-right: none;
+    animation: none;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

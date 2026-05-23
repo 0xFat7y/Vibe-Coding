@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - CALISTIFY</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* تحسينات عرض الصور في السلة */
+    .cart-item-image {
+      width: 100px;
+      height: 100px;
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+    }
+    .cart-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .cart-item-image .image-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      text-align: center;
+      padding: 0.5rem;
+      background: linear-gradient(135deg, rgba(255,215,0,0.03), rgba(255,215,0,0.08));
+    }
+    .cart-item-image .image-placeholder i {
+      font-size: 1.8rem;
+      color: var(--primary);
+      opacity: 0.4;
+      margin-bottom: 0.25rem;
+    }
+    .cart-item-image img[src=""],
+    .cart-item-image img[src="#"],
+    .cart-item-image img:not([src]) {
+      display: none;
+    }
+    .cart-item-image img[src=""] + .image-placeholder,
+    .cart-item-image img[src="#"] + .image-placeholder,
+    .cart-item-image img:not([src]) + .image-placeholder {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-logo">CALISTIFY</div>
+      <button class="mobile-nav-close" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="mobile-nav-links" id="mobileNavLinks">
+      <a href="index.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-house"></i></span> Home
+      </a>
+      <a href="about.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-circle-info"></i></span> About
+      </a>
+      <a href="training.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-dumbbell"></i></span> Training
+      </a>
+      <a href="nutrition.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-apple-whole"></i></span> Nutrition
+      </a>
+      <a href="shop.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-bag-shopping"></i></span> Shop
+      </a>
+    </nav>
+    <div class="mobile-nav-divider"></div>
+    <div class="mobile-nav-actions">
+      <a href="login.html" class="btn btn-outline" onclick="closeMobileNav()">Login</a>
+      <a href="register.html" class="btn btn-primary" onclick="closeMobileNav()">Sign Up</a>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo" onclick="window.location.href='index.html'"><img src="images/Calistify logo.png" alt="Calistify" class="logo-img"></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <div class="user-actions">
+        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+        <div class="cart-icon">
+          <i class="fas fa-shopping-cart" style="font-size: 1.5rem; color: var(--primary);"></i>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-outline">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="cart-container">
+    <div class="container">
+      <h1 class="text-gradient" style="font-family: var(--font-display); font-size: 4rem; letter-spacing: 3px; margin-bottom: 3rem;">
+        SHOPPING CART
+      </h1>
+
+      <div style="display: grid; grid-template-columns: 1fr 400px; gap: 3rem;">
+        <div id="cart-items">
+          <p style="color: var(--text-secondary); font-size: 1.2rem;">Your cart is empty. <a href="shop.html" style="color: var(--primary);">Continue shopping</a></p>
+        </div>
+
+        <div class="cart-summary">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1.5rem;">Order Summary</h3>
+          <div style="border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+              <span style="color: var(--text-secondary);">Subtotal</span>
+              <span id="subtotal" style="font-weight: 600;">$0.00</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+              <span style="color: var(--text-secondary);">Shipping</span>
+              <span style="font-weight: 600;">$9.99</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: 700; margin-bottom: 2rem;">
+            <span>Total</span>
+            <span id="total" style="color: var(--primary);">$9.99</span>
+          </div>
+          <button class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1.2rem;" onclick="checkout()">
+            <i class="fas fa-lock"></i> Proceed to Checkout
+          </button>
+          <a href="shop.html" class="btn btn-outline" style="width: 100%; margin-top: 1rem; text-align: center; display: block; padding: 1rem;">
+            <i class="fas fa-arrow-left"></i> Continue Shopping
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>CALISTIFY</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Calistify. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // دالة مساعدة لعرض الصورة أو placeholder
+    function getProductImageHTML(imagePath, productName) {
+      if (!imagePath || imagePath === '') {
+        return `
+          <div class="image-placeholder">
+            <i class="fas fa-image"></i>
+            <span>${productName}</span>
+          </div>
+        `;
+      }
+      return `<img src="${imagePath}" alt="${productName}" onerror="this.src=''; this.onerror=null;">`;
+    }
+
+    function renderCart() {
+      const items = window.calistify.cart.items;
+      const container = document.getElementById('cart-items');
+      
+      if (items.length === 0) {
+        container.innerHTML = '<p style="color: var(--text-secondary); font-size: 1.2rem;">Your cart is empty. <a href="shop.html" style="color: var(--primary);">Continue shopping</a></p>';
+        document.getElementById('subtotal').textContent = '$0.00';
+        document.getElementById('total').textContent = '$9.99';
+        return;
+      }
+
+      container.innerHTML = items.map(item => {
+        const imageHTML = getProductImageHTML(item.image, item.name);
+        
+        return `
+        <div class="cart-item" style="display: grid; grid-template-columns: 100px 1fr auto auto; gap: 2rem; align-items: center; background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 1.5rem;">
+          <div class="cart-item-image">
+            ${imageHTML}
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 0.5rem;">${item.name}</h3>
+            <p style="color: var(--text-secondary);">$${item.price.toFixed(2)} each</p>
+          </div>
+          <div class="quantity-control" style="display: flex; gap: 0.5rem; align-items: center;">
+            <button class="quantity-btn" style="width: 32px; height: 32px; border: none; background: var(--bg-secondary); color: var(--text-primary); border-radius: 4px; cursor: pointer;" onclick="updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
+            <span style="font-weight: 700; min-width: 30px; text-align: center;">${item.quantity}</span>
+            <button class="quantity-btn" style="width: 32px; height: 32px; border: none; background: var(--bg-secondary); color: var(--text-primary); border-radius: 4px; cursor: pointer;" onclick="updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
+          </div>
+          <div style="text-align: right;">
+            <p style="font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem;">
+              $${(item.price * item.quantity).toFixed(2)}
+            </p>
+            <button class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;" onclick="window.calistify.cart.removeItem(${item.id}); renderCart();">
+              <i class="fas fa-trash"></i> Remove
+            </button>
+          </div>
+        </div>
+      `}).join('');
+
+      const subtotal = window.calistify.cart.getTotal();
+      document.getElementById('subtotal').textContent = '$' + subtotal.toFixed(2);
+      document.getElementById('total').textContent = '$' + (subtotal + 9.99).toFixed(2);
+      
+      // تحديث عداد السلة
+      document.querySelectorAll('.cart-count').forEach(el => {
+        el.textContent = window.calistify.cart.getItemCount();
+      });
+    }
+
+    function updateQuantity(id, qty) {
+      window.calistify.cart.updateQuantity(id, qty);
+      renderCart();
+    }
+
+    function checkout() {
+      if (window.calistify.cart.items.length === 0) {
+        alert('Your cart is empty!');
+        return;
+      }
+      alert('Checkout functionality would be implemented here with payment gateway integration!');
+    }
+
+    // تهيئة الصفحة
+    document.addEventListener('DOMContentLoaded', renderCart);
+  </script>
+
+  
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutrition Guide - CALISTIFY</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-logo">CALISTIFY</div>
+      <button class="mobile-nav-close" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="mobile-nav-links" id="mobileNavLinks">
+      <a href="index.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-house"></i></span> Home
+      </a>
+      <a href="about.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-circle-info"></i></span> About
+      </a>
+      <a href="training.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-dumbbell"></i></span> Training
+      </a>
+      <a href="nutrition.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-apple-whole"></i></span> Nutrition
+      </a>
+      <a href="shop.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-bag-shopping"></i></span> Shop
+      </a>
+    </nav>
+    <div class="mobile-nav-divider"></div>
+    <div class="mobile-nav-actions">
+      <a href="login.html" class="btn btn-outline" onclick="closeMobileNav()">Login</a>
+      <a href="register.html" class="btn btn-primary" onclick="closeMobileNav()">Sign Up</a>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo" onclick="window.location.href='index.html'"><img src="images/Calistify logo.png" alt="Calistify" class="logo-img"></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="nutrition.html" class="active">Nutrition</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <div class="user-actions">
+        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+        <div class="cart-icon" onclick="window.location.href='cart.html'">
+          <i class="fas fa-shopping-cart" style="font-size: 1.5rem;"></i>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="register.html" class="btn btn-primary">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1 class="text-gradient">NUTRITION GUIDE</h1>
+      <p style="font-size: 1.5rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto;">Fuel your body for optimal calisthenics performance. Learn what to eat, when, and why.</p>
+    </div>
+  </section>
+
+  <section class="nutrition-section">
+    <div class="container">
+      <h2 class="section-title">NUTRITION FUNDAMENTALS</h2>
+      <p class="section-subtitle">Build your body from the inside out</p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary);"><i class="fas fa-drumstick-bite" style="font-size:inherit;color:inherit;"></i> Protein</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8;"><strong>1.6-2.2g per kg bodyweight</strong><br>Essential for muscle recovery and growth. Aim for lean sources spread throughout the day.</p>
+        </div>
+        <div class="card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary);"><i class="fas fa-bowl-rice" style="font-size:inherit;color:inherit;"></i> Carbohydrates</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8;"><strong>3-5g per kg bodyweight</strong><br>Your primary energy source. Focus on complex carbs for sustained energy during training.</p>
+        </div>
+        <div class="card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary);"><i class="fas fa-leaf" style="font-size:inherit;color:inherit;"></i> Healthy Fats</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8;"><strong>0.8-1.2g per kg bodyweight</strong><br>Support hormone production and joint health. Include omega-3s for recovery.</p>
+        </div>
+      </div>
+
+      <h2 class="section-title" style="margin-top: 6rem;">DIET APPROACHES</h2>
+      <div class="diet-grid">
+        <div class="diet-card">
+          <div class="diet-icon"><i class="fas fa-scale-balanced" style="font-size:inherit;color:inherit;"></i></div>
+          <h3 class="diet-title">Balanced Macro Diet</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">The most versatile approach for calisthenics athletes. Balance protein, carbs, and fats to support training while maintaining a healthy body composition.</p>
+          <ul style="list-style: none; color: var(--text-secondary);"><li>✓ Flexible and sustainable</li><li>✓ Good for beginners</li><li>✓ Supports all training goals</li></ul>
+        </div>
+        <div class="diet-card">
+          <div class="diet-icon"><i class="fas fa-spa" style="font-size:inherit;color:inherit;"></i></div>
+          <h3 class="diet-title">Plant-Based Athlete</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">Fully plant-based nutrition for calisthenics. Focus on complete protein sources, adequate calories, and proper supplementation (B12, D3).</p>
+          <ul style="list-style: none; color: var(--text-secondary);"><li>✓ High in micronutrients</li><li>✓ Good for recovery</li><li>✓ Requires planning</li></ul>
+        </div>
+        <div class="diet-card">
+          <div class="diet-icon"><i class="fas fa-clock" style="font-size:inherit;color:inherit;"></i></div>
+          <h3 class="diet-title">Intermittent Fasting</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">Time-restricted eating (16:8 or 18:6). Can work well for calisthenics if training is properly timed and sufficient calories are consumed.</p>
+          <ul style="list-style: none; color: var(--text-secondary);"><li>✓ May improve insulin sensitivity</li><li>✓ Convenient for some</li><li>✓ Not for everyone</li></ul>
+        </div>
+        <div class="diet-card">
+          <div class="diet-icon"><i class="fas fa-weight-hanging" style="font-size:inherit;color:inherit;"></i></div>
+          <h3 class="diet-title">High Protein Focus</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">Elevated protein intake (2-2.5g/kg) to maximize muscle recovery and support strength gains. Ideal during intensive training phases.</p>
+          <ul style="list-style: none; color: var(--text-secondary);"><li>✓ Great for muscle building</li><li>✓ Supports recovery</li><li>✓ Very satiating</li></ul>
+        </div>
+      </div>
+
+      <h2 class="section-title" style="margin-top: 6rem;">BEST FOODS FOR CALISTHENICS</h2>
+      <h3 style="font-family: var(--font-heading); font-size: 2rem; margin: 3rem 0 2rem; color: var(--primary);">Protein Sources</h3>
+      <div class="food-grid">
+        <div class="food-item"><div class="food-emoji"><i class="fas fa-drumstick-bite" style="font-size:inherit;color:inherit;"></i></div><div class="food-name">Chicken Breast</div><div class="food-benefit">Lean protein, high quality</div></div>
+        <div class="food-item"><div class="food-emoji"><i class="fas fa-fish" style="font-size:inherit;color:inherit;"></i></div><div class="food-name">Salmon</div><div class="food-benefit">Omega-3s, protein</div></div>
+        <div class="food-item"><div class="food-emoji"><i class="fas fa-egg" style="font-size:inherit;color:inherit;"></i></div><div class="food-name">Eggs</div><div class="food-benefit">Complete protein, versatile</div></div>
+        <div class="food-item"><div class="food-emoji"><i class="fas fa-circle-dot" style="font-size:inherit;color:inherit;"></i></div><div class="food-name">Lentils</div><div class="food-benefit">Plant protein, fiber</div></div>
+        <div class="food-item"><div class="food-emoji"><i class="fas fa-glass-water" style="font-size:inherit;color:inherit;"></i></div><div class="food-name">Greek Yogurt</div><div class="food-benefit">Protein, probiotics</div></div>
+        <div class="food-item"><div class="food-emoji"><i class="fas fa-circle" style="font-size:inherit;color:inherit;"></i></div><div class="food-name">Almonds</div><div class="food-benefit">Protein, healthy fats</div></div>
+      </div>
+
+      <h3 style="font-family: var(--font-heading); font-size: 2rem; margin: 3rem 0 2rem; color: var(--primary);">Complex Carbohydrates</h3>
+      <div class="food-grid">
+        <div class="food-item"><div class="food-emoji"><i class="fas fa-bowl-rice" style="font-size:inherit;color:inherit;"></i></div><div class="food-name">Brown Rice</div><div class="food-benefit">Sustained energy</div></div>
+        <div class="food-item"><div class="food-emoji"><i class="fas fa-carrot" style="font-size:inherit;color:inherit;"></i></div><div class="food-name">Sweet Potato</div><div class="food-benefit">Vitamins, fiber</div></div>
+        <div class="food-item"><div class="food-emoji"><i class="fas fa-apple-whole" style="font-size:inherit;color:inherit;"></i></div><div class="food-name">Bananas</div><div class="food-benefit">Quick energy, potassium</div></div>
+        <div class="food-item"><div class="food-emoji"><i class="fas fa-wheat-awn" style="font-size:inherit;color:inherit;"></i></div><div class="food-name">Oats</div><div class="food-benefit">Slow-release energy</div></div>
+        <div class="food-item"><div class="food-emoji"><i class="fas fa-utensils" style="font-size:inherit;color:inherit;"></i></div><div class="food-name">Whole Grain Pasta</div><div class="food-benefit">High carbs, fiber</div></div>
+        <div class="food-item"><div class="food-emoji"><i class="fas fa-bread-slice" style="font-size:inherit;color:inherit;"></i></div><div class="food-name">Quinoa</div><div class="food-benefit">Complete protein, carbs</div></div>
+      </div>
+
+      <h2 class="section-title" style="margin-top: 6rem;">FOODS TO LIMIT OR AVOID</h2>
+      <div class="grid-2" style="margin-top: 3rem;">
+        <div class="card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem; color: #F44336;">❌ Highly Processed Foods</h3>
+          <ul style="list-style: none; color: var(--text-secondary);">
+            <li style="margin-bottom: 0.75rem;">• Fast food and deep-fried items</li>
+            <li style="margin-bottom: 0.75rem;">• Sugary cereals and pastries</li>
+            <li style="margin-bottom: 0.75rem;">• Processed meats (hot dogs, deli meats)</li>
+            <li style="margin-bottom: 0.75rem;">• Chips and packaged snacks</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem; color: #F44336;">🚫 Sugar & Empty Calories</h3>
+          <ul style="list-style: none; color: var(--text-secondary);">
+            <li style="margin-bottom: 0.75rem;">• Soda and energy drinks</li>
+            <li style="margin-bottom: 0.75rem;">• Candy and sweets</li>
+            <li style="margin-bottom: 0.75rem;">• White bread and refined grains</li>
+            <li style="margin-bottom: 0.75rem;">• Excessive alcohol</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background: linear-gradient(135deg, var(--primary), var(--accent)); padding: 3rem; border-radius: 16px; margin: 4rem 0; text-align: center; color: white;">
+        <h3 style="font-family: var(--font-display); font-size: 3rem; margin-bottom: 1rem; letter-spacing: 2px;">MEAL PREP TIPS</h3>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95;">Prepare your meals in advance to stay consistent with your nutrition goals</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: left;">
+          <div>✓ Cook in batches on weekends</div>
+          <div>✓ Use portion control containers</div>
+          <div>✓ Prep protein sources ahead</div>
+          <div>✓ Keep healthy snacks ready</div>
+          <div>✓ Stay hydrated (3-4L daily)</div>
+          <div>✓ Track your intake initially</div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 4rem;">
+        <a href="training.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;">Back to Training Programs</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>CALISTIFY</h3>
+          <p style="color: var(--text-secondary); margin-top: 1rem; line-height: 1.8;">Your complete platform for mastering calisthenics.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="nutrition.html">Nutrition</a></li>
+            <li><a href="shop.html">Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Account</h3>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Sign Up</a></li>
+            <li><a href="profile.html">Profile</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Calistify. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

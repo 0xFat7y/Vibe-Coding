@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expert Level - CALISTIFY</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+</head>
+<body>
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-logo">CALISTIFY</div>
+      <button class="mobile-nav-close" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <nav class="mobile-nav-links" id="mobileNavLinks">
+      <a href="index.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-house"></i></span> Home
+      </a>
+      <a href="about.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-circle-info"></i></span> About
+      </a>
+      <a href="training.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-dumbbell"></i></span> Training
+      </a>
+      <a href="nutrition.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-apple-whole"></i></span> Nutrition
+      </a>
+      <a href="shop.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-bag-shopping"></i></span> Shop
+      </a>
+    </nav>
+
+    <div class="mobile-nav-divider"></div>
+
+    <div class="mobile-nav-actions">
+      <a href="login.html" class="btn btn-outline" onclick="closeMobileNav()">Login</a>
+      <a href="register.html" class="btn btn-primary" onclick="closeMobileNav()">Sign Up</a>
+    </div>
+  </div>
+
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo" onclick="window.location.href='index.html'"><img src="images/Calistify logo.png" alt="Calistify" class="logo-img"></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="training.html" class="active">Training</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <div class="user-actions">
+        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+        <div class="cart-icon" onclick="window.location.href='cart.html'">
+          <i class="fas fa-shopping-cart" style="font-size: 1.5rem;"></i>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="register.html" class="btn btn-primary">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="level-hero">
+    <div class="level-hero-content">
+      <div class="container">
+        <span class="level-badge">Level 04</span>
+        <h1>EXPERT <i class="fas fa-bolt" style="font-size:inherit;color:inherit;"></i></h1>
+        <p style="font-size: 1.5rem; opacity: 0.95; max-width: 700px; margin: 0 auto;">
+          Master elite-level skills. Achieve full planche, one-arm pull-ups, and movements few can perform.
+        </p>
+        
+        <div style="display: flex; justify-content: center; gap: 3rem; margin-top: 2rem; flex-wrap: wrap;">
+          <div>
+            <div style="font-family: var(--font-display); font-size: 2.5rem;">150+</div>
+            <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9;">Exercises</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-display); font-size: 2.5rem;">24+</div>
+            <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9;">Weeks</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-display); font-size: 2.5rem;">Elite</div>
+            <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9;">Difficulty</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 6rem 0;">
+    <div class="container">
+      <h2 class="section-title">ELITE MASTERY</h2>
+      <p class="section-subtitle">The highest level of calisthenics achievement</p>
+      
+      <p style="font-size: 1.3rem; color: var(--text-secondary); line-height: 1.8; text-align: center; max-width: 900px; margin: 0 auto 4rem;">
+        The Expert level represents the pinnacle of bodyweight strength. These skills require years of dedicated training, 
+        perfect technique, and extraordinary strength-to-weight ratio. Less than 1% of trainees ever achieve this level.
+      </p>
+
+      <div class="elite-grid">
+        <div class="elite-card">
+          <div class="elite-icon"><i class="fas fa-fighter-jet" style="font-size:inherit;color:inherit;"></i></div>
+          <h3 class="elite-title">Full Planche</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            Body parallel to ground, arms straight. The ultimate pushing strength skill requiring years of specific training.
+          </p>
+        </div>
+
+        <div class="elite-card">
+          <div class="elite-icon"><i class="fas fa-dumbbell" style="font-size:inherit;color:inherit;"></i></div>
+          <h3 class="elite-title">One-Arm Pull-Up</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            The epitome of pulling strength. Full pull-up using only one arm. Requires immense back and arm strength.
+          </p>
+        </div>
+
+        <div class="elite-card">
+          <div class="elite-icon"><i class="fas fa-star" style="font-size:inherit;color:inherit;"></i></div>
+          <h3 class="elite-title">Iron Cross</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            Arms extended sideways on rings while body hangs. Demands exceptional shoulder and chest strength.
+          </p>
+        </div>
+
+        <div class="elite-card">
+          <div class="elite-icon"><i class="fas fa-weight-hanging" style="font-size:inherit;color:inherit;"></i></div>
+          <h3 class="elite-title">Maltese</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            Advanced planche variation with arms extended further from body. Ultra-elite strength requirement.
+          </p>
+        </div>
+
+        <div class="elite-card">
+          <div class="elite-icon"><i class="fas fa-crosshairs" style="font-size:inherit;color:inherit;"></i></div>
+          <h3 class="elite-title">Full Front Lever</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            Body completely horizontal, legs extended. Supreme back strength and body control demonstration.
+          </p>
+        </div>
+
+        <div class="elite-card">
+          <div class="elite-icon"><i class="fas fa-rocket" style="font-size:inherit;color:inherit;"></i></div>
+          <h3 class="elite-title">90-Degree Push-Up</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            Handstand position with body parallel to ground. Combines planche and handstand strength.
+          </p>
+        </div>
+      </div>
+
+      <div style="background: linear-gradient(135deg, var(--primary), var(--accent)); padding: 4rem; border-radius: 20px; margin: 6rem 0; text-align: center; color: white;">
+        <h2 style="font-family: var(--font-display); font-size: 3.5rem; letter-spacing: 3px; margin-bottom: 1.5rem;">
+          THE JOURNEY
+        </h2>
+        <p style="font-size: 1.3rem; opacity: 0.95; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+          Expert level is not a destination—it's a continuous journey. Each skill opens doors to new variations 
+          and combinations. Athletes at this level often train specific skills for 6-12 months before achieving them.
+        </p>
+      </div>
+
+      <h2 class="section-title">TRAINING PRINCIPLES</h2>
+      
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary);">
+            Specificity
+          </h3>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            Train the exact movement pattern you want to achieve. Use progressions that closely mimic the final skill. 
+            General strength alone won't build planches or one-arm pull-ups.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary);">
+            Patience & Consistency
+          </h3>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            Progress is measured in months and years, not weeks. Consistent training with proper recovery is essential. 
+            Pushing too hard leads to injury and setbacks.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary);">
+            Technique Over Force
+          </h3>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            Perfect technique is non-negotiable at this level. Bad form creates bad habits and increases injury risk. 
+            Film yourself, study elite athletes, refine constantly.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary);">
+            Recovery & Nutrition
+          </h3>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            Elite skills demand peak physical condition. Optimize sleep (8+ hours), nutrition (high protein, sufficient calories), 
+            and active recovery. Your body needs to rebuild stronger.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top: 4rem; text-align: center;">
+        <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary);">
+          Ready for the Challenge?
+        </h3>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto 2rem;">
+          The Expert level requires dedication beyond most training programs. Work with coaches, study intensively, 
+          and commit to years of focused training. The rewards are extraordinary.
+        </p>
+        <a href="training.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">
+          View All Training Levels
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>CALISTIFY</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Calistify. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <script>
+    
+        // Highlight active nav link
+    (function(){
+      const links = document.querySelectorAll('.mobile-nav-links a');
+      const page  = window.location.pathname.split('/').pop() || 'index.html';
+      links.forEach(a => { if (a.getAttribute('href') === page) a.classList.add('active'); });
+    })();
+
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      const btn = document.getElementById('hamburgerBtn');
+      const isOpen = nav.classList.contains('open');
+      if (isOpen) { closeMobileNav(); } else {
+        nav.classList.add('open');
+        btn.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        // backdrop
+        let bd = document.getElementById('mobileNavBackdrop');
+        if (!bd) {
+          bd = document.createElement('div');
+          bd.id = 'mobileNavBackdrop';
+          bd.className = 'mobile-nav-backdrop open';
+          bd.onclick = closeMobileNav;
+          document.body.appendChild(bd);
+        } else { bd.classList.add('open'); }
+      }
+    }
+    function closeMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      const btn = document.getElementById('hamburgerBtn');
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow = '';
+      const bd = document.getElementById('mobileNavBackdrop');
+      if (bd) bd.classList.remove('open');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
+  </script>
+
+</body>
+</html>

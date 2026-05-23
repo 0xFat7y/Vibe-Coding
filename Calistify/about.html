@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Calisthenics - CALISTIFY</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-logo">CALISTIFY</div>
+      <button class="mobile-nav-close" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="mobile-nav-links" id="mobileNavLinks">
+      <a href="index.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-house"></i></span> Home
+      </a>
+      <a href="about.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-circle-info"></i></span> About
+      </a>
+      <a href="training.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-dumbbell"></i></span> Training
+      </a>
+      <a href="nutrition.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-apple-whole"></i></span> Nutrition
+      </a>
+      <a href="shop.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-bag-shopping"></i></span> Shop
+      </a>
+    </nav>
+    <div class="mobile-nav-divider"></div>
+    <div class="mobile-nav-actions">
+      <a href="login.html" class="btn btn-outline" onclick="closeMobileNav()">Login</a>
+      <a href="register.html" class="btn btn-primary" onclick="closeMobileNav()">Sign Up</a>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo" onclick="window.location.href='index.html'"><img src="images/Calistify logo.png" alt="Calistify" class="logo-img"></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <div class="user-actions">
+        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+        <div class="cart-icon" onclick="window.location.href='cart.html'">
+          <i class="fas fa-shopping-cart" style="font-size: 1.5rem;"></i>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="register.html" class="btn btn-primary">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="text-gradient">WHAT IS CALISTHENICS?</h1>
+      <p>Master your body. Build extraordinary strength using nothing but your own bodyweight.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <!-- Introduction -->
+      <div class="content-block">
+        <h2>The Art of Bodyweight Training</h2>
+        <p>
+          Calisthenics is a form of strength training that uses your own bodyweight as resistance. 
+          The word comes from the Greek words "kalos" (beautiful) and "sthenos" (strength), literally 
+          meaning "beautiful strength." Unlike traditional weight training, calisthenics focuses on 
+          functional movement patterns that improve not just strength, but also flexibility, balance, 
+          coordination, and body control.
+        </p>
+        <p>
+          From basic movements like push-ups and pull-ups to advanced skills like planches and human flags, 
+          calisthenics offers a progressive path that challenges athletes at every level. What makes it 
+          unique is that your gym can be anywhere – a park, your home, or any space with minimal equipment.
+        </p>
+      </div>
+
+      <!-- Key Principles -->
+      <div class="content-block">
+        <h2>Core Principles of Calisthenics</h2>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-dumbbell" style="font-size:inherit;color:inherit;"></i></div>
+            <h4>Progressive Overload</h4>
+            <p>Gradually increase difficulty through leverage, tempo, and advanced variations</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-crosshairs" style="font-size:inherit;color:inherit;"></i></div>
+            <h4>Functional Strength</h4>
+            <p>Build strength that translates to real-world movements and activities</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-scale-balanced" style="font-size:inherit;color:inherit;"></i></div>
+            <h4>Body Control</h4>
+            <p>Develop exceptional balance, coordination, and spatial awareness</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-rotate" style="font-size:inherit;color:inherit;"></i></div>
+            <h4>Mind-Muscle Connection</h4>
+            <p>Enhance neuromuscular coordination and proprioception</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Highlight Box -->
+      <div class="highlight-box">
+        <h3>TRAIN ANYWHERE, ANYTIME</h3>
+        <p>
+          The beauty of calisthenics is its accessibility. All you need is your body and the determination 
+          to push yourself. No expensive gym memberships, no bulky equipment – just pure, functional strength training.
+        </p>
+      </div>
+
+      <!-- Comparison with Other Sports -->
+      <div class="content-block">
+        <h2>How Calisthenics Compares to Other Disciplines</h2>
+        <p>Understanding how calisthenics differs from and complements other training methods helps you make informed decisions about your fitness journey.</p>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <h4><i class="fas fa-weight-hanging" style="font-size:inherit;color:inherit;"></i> CALISTHENICS</h4>
+            <ul>
+              <li>Uses bodyweight as resistance</li>
+              <li>Emphasizes body control and coordination</li>
+              <li>Minimal equipment required</li>
+              <li>Focus on relative strength (strength-to-weight ratio)</li>
+              <li>High skill ceiling with advanced movements</li>
+              <li>Excellent for functional fitness</li>
+              <li>Lower risk of joint stress when done properly</li>
+              <li>Can train anywhere</li>
+            </ul>
+          </div>
+          <div class="comparison-card">
+            <h4><i class="fas fa-weight-hanging" style="font-size:inherit;color:inherit;"></i> WEIGHT TRAINING (GYM)</h4>
+            <ul>
+              <li>Uses external weights (barbells, dumbbells, machines)</li>
+              <li>Emphasizes absolute strength and muscle mass</li>
+              <li>Requires gym equipment</li>
+              <li>Focus on lifting maximum weight</li>
+              <li>Easier to isolate specific muscles</li>
+              <li>More straightforward progressive overload</li>
+              <li>Better for pure muscle hypertrophy</li>
+              <li>Requires gym membership or home equipment</li>
+            </ul>
+          </div>
+          <div class="comparison-card">
+            <h4><i class="fas fa-fist-raised" style="font-size:inherit;color:inherit;"></i> MMA / COMBAT SPORTS</h4>
+            <ul>
+              <li>Focuses on fighting techniques and tactics</li>
+              <li>Emphasizes explosive power and endurance</li>
+              <li>Requires specialized training and coaching</li>
+              <li>High cardiovascular demand</li>
+              <li>Includes sparring and partner work</li>
+              <li>Risk of injury from contact</li>
+              <li>Develops mental toughness and discipline</li>
+              <li>Competitive and skill-based</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>The Synergy Between Disciplines</h3>
+        <p>While each discipline has its unique benefits, they can complement each other beautifully:</p>
+        <ul>
+          <li><strong>Calisthenics + Weight Training:</strong> Combining both gives you the best of functional bodyweight strength and the ability to build maximum muscle mass and absolute strength.</li>
+          <li><strong>Calisthenics + MMA:</strong> Many fighters use calisthenics for conditioning and functional strength that translates directly to combat performance.</li>
+          <li><strong>Calisthenics as a Foundation:</strong> The body control and coordination developed through calisthenics benefits virtually every other sport and physical activity.</li>
+        </ul>
+      </div>
+
+      <!-- Why Choose Calisthenics -->
+      <div class="content-block">
+        <h2>Why Choose Calisthenics?</h2>
+        <p>Calisthenics offers unique advantages that make it an excellent choice for many athletes:</p>
+        <h3>Accessibility and Convenience</h3>
+        <p>Train anywhere, anytime. No gym membership required. Perfect for travelers, busy professionals, or anyone who prefers outdoor training. The minimal equipment needed (just a pull-up bar for many exercises) makes it incredibly accessible.</p>
+        <h3>Relative Strength Development</h3>
+        <p>Calisthenics develops an exceptional strength-to-weight ratio. You become strong relative to your body weight, which translates to impressive athletic performance and the ability to perform skills that look almost superhuman.</p>
+        <h3>Aesthetic and Functional Physique</h3>
+        <p>Calisthenics naturally develops a balanced, athletic physique. The compound movements engage multiple muscle groups simultaneously, promoting functional muscle development and a lean, defined appearance.</p>
+        <h3>Skill Progression and Challenge</h3>
+        <p>The journey from basic exercises to advanced skills like planches, front levers, and human flags provides endless challenge and satisfaction. Each milestone achieved is a testament to dedication and progress.</p>
+        <h3>Low Injury Risk</h3>
+        <p>When practiced with proper form and progression, calisthenics has a relatively low injury risk compared to heavy weight training or contact sports. You're always working within your body's natural capabilities.</p>
+        <h3>Community and Culture</h3>
+        <p>The calisthenics community is vibrant, supportive, and growing worldwide. From street workout parks to online communities, you'll find motivation, guidance, and camaraderie.</p>
+      </div>
+
+      <!-- Getting Started -->
+      <div class="content-block">
+        <h2>Ready to Begin Your Journey?</h2>
+        <p>Whether you're a complete beginner or an experienced athlete looking to add calisthenics to your training, Calistify provides everything you need:</p>
+        <ul>
+          <li>Structured progression from pre-beginner to expert level</li>
+          <li>Detailed exercise tutorials with proper form demonstrations</li>
+          <li>Comprehensive nutrition guidance for calisthenics athletes</li>
+          <li>Progress tracking to monitor your advancement</li>
+          <li>Access to quality equipment when you need it</li>
+        </ul>
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="training.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">
+            <i class="fas fa-dumbbell"></i> START YOUR TRAINING
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>CALISTIFY</h3>
+          <p style="color: var(--text-secondary); margin-top: 1rem; line-height: 1.8;">Your complete platform for mastering calisthenics. Build strength, control, and achieve extraordinary results with bodyweight training.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Calisthenics</a></li>
+            <li><a href="training.html">Training Programs</a></li>
+            <li><a href="nutrition.html">Nutrition Guide</a></li>
+            <li><a href="shop.html">Equipment Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Account</h3>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Sign Up</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="progress.html">Track Progress</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Calistify. All rights reserved. Transform your body through the power of calisthenics.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

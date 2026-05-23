@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intermediate Level - CALISTIFY</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+</head>
+<body>
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-logo">CALISTIFY</div>
+      <button class="mobile-nav-close" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <nav class="mobile-nav-links" id="mobileNavLinks">
+      <a href="index.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-house"></i></span> Home
+      </a>
+      <a href="about.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-circle-info"></i></span> About
+      </a>
+      <a href="training.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-dumbbell"></i></span> Training
+      </a>
+      <a href="nutrition.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-apple-whole"></i></span> Nutrition
+      </a>
+      <a href="shop.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-bag-shopping"></i></span> Shop
+      </a>
+    </nav>
+
+    <div class="mobile-nav-divider"></div>
+
+    <div class="mobile-nav-actions">
+      <a href="login.html" class="btn btn-outline" onclick="closeMobileNav()">Login</a>
+      <a href="register.html" class="btn btn-primary" onclick="closeMobileNav()">Sign Up</a>
+    </div>
+  </div>
+
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo" onclick="window.location.href='index.html'"><img src="images/Calistify logo.png" alt="Calistify" class="logo-img"></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="training.html" class="active">Training</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <div class="user-actions">
+        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+        <div class="cart-icon" onclick="window.location.href='cart.html'">
+          <i class="fas fa-shopping-cart" style="font-size: 1.5rem;"></i>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="register.html" class="btn btn-primary">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="level-hero">
+    <div class="level-hero-content">
+      <div class="container">
+        <span class="level-badge">Level 03</span>
+        <h1>INTERMEDIATE <i class="fas fa-fire" style="font-size:inherit;color:inherit;"></i></h1>
+        <p style="font-size: 1.5rem; opacity: 0.95; max-width: 700px; margin: 0 auto;">
+          Unlock advanced skills. Master muscle-ups, front levers, and impressive static holds.
+        </p>
+        
+        <div style="display: flex; justify-content: center; gap: 3rem; margin-top: 2rem; flex-wrap: wrap;">
+          <div>
+            <div style="font-family: var(--font-display); font-size: 2.5rem;">120+</div>
+            <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9;">Exercises</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-display); font-size: 2.5rem;">16-24</div>
+            <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9;">Weeks</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-display); font-size: 2.5rem;">Advanced</div>
+            <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9;">Difficulty</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="content-tabs">
+    <div class="tabs-container">
+      <button class="tab-btn active" onclick="switchTab('overview')">
+        <i class="fas fa-info-circle"></i> Overview
+      </button>
+      <button class="tab-btn" onclick="switchTab('exercises')">
+        <i class="fas fa-dumbbell"></i> Exercises
+      </button>
+      <button class="tab-btn" onclick="switchTab('requirements')">
+        <i class="fas fa-trophy"></i> Goals
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="overview" class="tab-content active">
+      <h2 class="section-title" style="text-align: left;">Advanced Training</h2>
+      
+      <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 3rem;">
+        The Intermediate level introduces skills that most people find impressive. You'll learn muscle-ups, 
+        front lever progressions, handstand push-ups, and develop serious static strength.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h4 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem;">
+            <i class="fas fa-rocket" style="color: var(--primary);"></i> Muscle-Up Mastery
+          </h4>
+          <p style="color: var(--text-secondary);">
+            The holy grail of calisthenics. Learn the explosive pull and transition that combines pull-ups and dips into one fluid movement.
+          </p>
+        </div>
+        <div class="card">
+          <h4 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem;">
+            <i class="fas fa-level-down-alt" style="color: var(--primary);"></i> Front Lever
+          </h4>
+          <p style="color: var(--text-secondary);">
+            Develop incredible back and core strength with front lever progressions. Build toward this iconic static hold.
+          </p>
+        </div>
+        <div class="card">
+          <h4 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem;">
+            <i class="fas fa-hand-paper" style="color: var(--primary);"></i> Handstand Training
+          </h4>
+          <p style="color: var(--text-secondary);">
+            Progress from wall handstands to freestanding balance. Develop shoulder strength and body awareness.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="exercises" class="tab-content">
+      <h2 class="section-title" style="text-align: left;">Advanced Exercise Library</h2>
+      
+      <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin: 2rem 0 1.5rem; color: var(--primary);">
+        Dynamic Skills
+      </h3>
+      <div class="exercise-grid">
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Muscle-Up</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-hard">Hard</span>
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Full Upper Body</span>
+            </div>
+            <p class="exercise-description">
+              Explosive pull-up transitioning to a dip. Requires strength, technique, and timing. The ultimate calisthenics milestone.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">5-8</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">1-5</span>
+                <span class="stat-label">Reps</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">180s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Explosive Pull-Ups</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-medium">Medium</span>
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Back, Power</span>
+            </div>
+            <p class="exercise-description">
+              Pull with maximum force, hands leaving bar at top. Builds explosive power for muscle-ups.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">4-5</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">5-8</span>
+                <span class="stat-label">Reps</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">120s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Archer Pull-Ups</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-hard">Hard</span>
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Back, Arms</span>
+            </div>
+            <p class="exercise-description">
+              Pull to one side, other arm extended. Unilateral strength builder progressing toward one-arm pull-ups.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">4</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">5-8/side</span>
+                <span class="stat-label">Reps</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">120s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin: 3rem 0 1.5rem; color: var(--primary);">
+        Static Holds
+      </h3>
+      <div class="exercise-grid">
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Front Lever Progressions</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-hard">Hard</span>
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Back, Core</span>
+            </div>
+            <p class="exercise-description">
+              Body parallel to ground, hanging from bar. Progress from tuck to advanced tuck to straddle.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">5-7</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">5-15s</span>
+                <span class="stat-label">Duration</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">90s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Back Lever Progressions</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-hard">Hard</span>
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Shoulders, Back</span>
+            </div>
+            <p class="exercise-description">
+              Inverted body position. Builds shoulder strength and prepares for more advanced levers.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">4-6</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">8-20s</span>
+                <span class="stat-label">Duration</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">90s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <div class="exercise-gif-wrapper"><div class="exercise-gif-placeholder"><i class="fas fa-play-circle"></i><span>Add Exercise GIF</span></div><span class="exercise-gif-badge">GIF</span></div>
+          <div class="exercise-body">
+            <h4 class="exercise-title">Handstand Push-Up</h4>
+            <div class="exercise-meta">
+              <span class="exercise-difficulty difficulty-hard">Hard</span>
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Shoulders, Triceps</span>
+            </div>
+            <p class="exercise-description">
+              Inverted push-up against wall. Incredible shoulder strength and stability builder.
+            </p>
+            <div class="exercise-stats">
+              <div class="stat">
+                <span class="stat-value">4-5</span>
+                <span class="stat-label">Sets</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">5-10</span>
+                <span class="stat-label">Reps</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">120s</span>
+                <span class="stat-label">Rest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="requirements" class="tab-content">
+      <h2 class="section-title" style="text-align: left;">Level Mastery Goals</h2>
+      
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary);">
+            Completion Standards
+          </h3>
+          <ul style="list-style: none; color: var(--text-secondary); line-height: 2;">
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">✓ 5 clean muscle-ups</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">✓ 10-second advanced tuck front lever</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">✓ 15-second full back lever</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">✓ 8 handstand push-ups</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">✓ 10 archer pull-ups each side</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">✓ 60-second handstand hold</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">✓ 10 pistol squats each leg</li>
+            <li style="padding: 0.5rem 0;">✓ 30-second L-sit hold</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary);">
+            Advanced Progressions
+          </h3>
+          <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Work toward these skills during Intermediate training. They'll prepare you for Expert level:
+          </p>
+          <ul style="list-style: none; color: var(--text-secondary); line-height: 2;">
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">→ Straddle front lever attempts</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">→ One-arm pull-up negatives</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">→ Tuck planche holds</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">→ Freestanding handstand balance</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">→ Human flag progressions</li>
+            <li style="padding: 0.5rem 0;">→ Weighted muscle-ups</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem; text-align: center;">
+        <a href="expert.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">
+          Ready for Expert Level? →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Calistify. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function switchTab(tabName) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(tabName).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+
+  <script>
+    
+        // Highlight active nav link
+    (function(){
+      const links = document.querySelectorAll('.mobile-nav-links a');
+      const page  = window.location.pathname.split('/').pop() || 'index.html';
+      links.forEach(a => { if (a.getAttribute('href') === page) a.classList.add('active'); });
+    })();
+
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      const btn = document.getElementById('hamburgerBtn');
+      const isOpen = nav.classList.contains('open');
+      if (isOpen) { closeMobileNav(); } else {
+        nav.classList.add('open');
+        btn.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        // backdrop
+        let bd = document.getElementById('mobileNavBackdrop');
+        if (!bd) {
+          bd = document.createElement('div');
+          bd.id = 'mobileNavBackdrop';
+          bd.className = 'mobile-nav-backdrop open';
+          bd.onclick = closeMobileNav;
+          document.body.appendChild(bd);
+        } else { bd.classList.add('open'); }
+      }
+    }
+    function closeMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      const btn = document.getElementById('hamburgerBtn');
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow = '';
+      const bd = document.getElementById('mobileNavBackdrop');
+      if (bd) bd.classList.remove('open');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
+  </script>
+
+</body>
+</html>

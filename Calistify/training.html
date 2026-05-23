@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Programs - CALISTIFY</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-logo">CALISTIFY</div>
+      <button class="mobile-nav-close" onclick="closeMobileNav()"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="mobile-nav-links" id="mobileNavLinks">
+      <a href="index.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-house"></i></span> Home
+      </a>
+      <a href="about.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-circle-info"></i></span> About
+      </a>
+      <a href="training.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-dumbbell"></i></span> Training
+      </a>
+      <a href="nutrition.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-apple-whole"></i></span> Nutrition
+      </a>
+      <a href="shop.html" onclick="closeMobileNav()">
+        <span class="nav-icon"><i class="fas fa-bag-shopping"></i></span> Shop
+      </a>
+    </nav>
+    <div class="mobile-nav-divider"></div>
+    <div class="mobile-nav-actions">
+      <a href="login.html" class="btn btn-outline" onclick="closeMobileNav()">Login</a>
+      <a href="register.html" class="btn btn-primary" onclick="closeMobileNav()">Sign Up</a>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo" onclick="window.location.href='index.html'"><img src="images/Calistify logo.png" alt="Calistify" class="logo-img"></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="training.html" class="active">Training</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <div class="user-actions">
+        <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+        <div class="cart-icon" onclick="window.location.href='cart.html'">
+          <i class="fas fa-shopping-cart" style="font-size: 1.5rem;"></i>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-outline">Login</a>
+          <a href="register.html" class="btn btn-primary">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="page-header-content">
+      <div class="container">
+        <h1 class="text-gradient">TRAINING PROGRAMS</h1>
+        <p>Your complete roadmap from absolute beginner to elite calisthenics athlete. Follow our structured progression system and unlock your body's full potential.</p>
+        <div class="progression-visual">
+          <div class="progression-step pre-beginner">PRE-BEGINNER</div>
+          <i class="fas fa-arrow-right progression-arrow"></i>
+          <div class="progression-step beginner">BEGINNER</div>
+          <i class="fas fa-arrow-right progression-arrow"></i>
+          <div class="progression-step intermediate">INTERMEDIATE</div>
+          <i class="fas fa-arrow-right progression-arrow"></i>
+          <div class="progression-step expert">EXPERT</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Levels Section -->
+  <section class="levels-section">
+    <div class="container">
+
+      <!-- Pre-Beginner Level -->
+      <div class="level-card-large" onclick="window.location.href='pre-beginner.html'">
+        <div class="level-card-content">
+          <div class="level-sidebar pre-beginner">
+            <div class="level-number">01</div>
+            <div class="level-icon-large"><i class="fas fa-seedling" style="font-size:inherit;color:inherit;"></i></div>
+            <h2 class="level-title-large">PRE-BEGINNER</h2>
+            <p class="level-subtitle">Foundation Level</p>
+          </div>
+          <div class="level-main">
+            <h3>Build Your Foundation</h3>
+            <p>Start your calisthenics journey from absolute zero. This level focuses on developing the basic strength, mobility, and body awareness needed for safe and effective training. Perfect for complete beginners or those returning after a long break.</p>
+            <div class="level-features">
+              <div class="level-feature"><span class="level-feature-value">40+</span><span class="level-feature-label">Exercises</span></div>
+              <div class="level-feature"><span class="level-feature-value">8-12</span><span class="level-feature-label">Weeks</span></div>
+              <div class="level-feature"><span class="level-feature-value">Basic</span><span class="level-feature-label">Difficulty</span></div>
+            </div>
+            <div class="level-highlights">
+              <ul>
+                <li>Basic bodyweight movements</li>
+                <li>Mobility and flexibility work</li>
+                <li>Proper form development</li>
+                <li>Core strength building</li>
+                <li>Wrist and joint conditioning</li>
+                <li>Movement pattern learning</li>
+              </ul>
+            </div>
+            <div class="level-actions">
+              <button class="btn btn-primary" style="flex: 1;">Start Pre-Beginner Level</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beginner Level -->
+      <div class="level-card-large" onclick="window.location.href='beginner.html'">
+        <div class="level-card-content">
+          <div class="level-sidebar beginner">
+            <div class="level-number">02</div>
+            <div class="level-icon-large"><i class="fas fa-dumbbell" style="font-size:inherit;color:inherit;"></i></div>
+            <h2 class="level-title-large">BEGINNER</h2>
+            <p class="level-subtitle">Fundamental Skills</p>
+          </div>
+          <div class="level-main">
+            <h3>Master the Fundamentals</h3>
+            <p>Build solid strength with the fundamental calisthenics exercises. Master proper push-ups, pull-ups, dips, squats, and core work. Develop the strength base needed for intermediate progressions.</p>
+            <div class="level-features">
+              <div class="level-feature"><span class="level-feature-value">80+</span><span class="level-feature-label">Exercises</span></div>
+              <div class="level-feature"><span class="level-feature-value">12-16</span><span class="level-feature-label">Weeks</span></div>
+              <div class="level-feature"><span class="level-feature-value">Moderate</span><span class="level-feature-label">Difficulty</span></div>
+            </div>
+            <div class="level-highlights">
+              <ul>
+                <li>Full push-up mastery</li>
+                <li>Proper pull-up technique</li>
+                <li>Parallel bar dips</li>
+                <li>Advanced core exercises</li>
+                <li>Bodyweight squats & lunges</li>
+                <li>Introduction to static holds</li>
+              </ul>
+            </div>
+            <div class="level-actions">
+              <button class="btn btn-primary" style="flex: 1;">Start Beginner Level</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Intermediate Level -->
+      <div class="level-card-large" onclick="window.location.href='intermediate.html'">
+        <div class="level-card-content">
+          <div class="level-sidebar intermediate">
+            <div class="level-number">03</div>
+            <div class="level-icon-large"><i class="fas fa-fire" style="font-size:inherit;color:inherit;"></i></div>
+            <h2 class="level-title-large">INTERMEDIATE</h2>
+            <p class="level-subtitle">Advanced Skills</p>
+          </div>
+          <div class="level-main">
+            <h3>Unlock Advanced Movements</h3>
+            <p>Progress to impressive skills that demonstrate real mastery. Learn muscle-ups, L-sits, handstand push-ups, pistol squats, and begin working on static strength holds like front lever and back lever progressions.</p>
+            <div class="level-features">
+              <div class="level-feature"><span class="level-feature-value">120+</span><span class="level-feature-label">Exercises</span></div>
+              <div class="level-feature"><span class="level-feature-value">16-24</span><span class="level-feature-label">Weeks</span></div>
+              <div class="level-feature"><span class="level-feature-value">Advanced</span><span class="level-feature-label">Difficulty</span></div>
+            </div>
+            <div class="level-highlights">
+              <ul>
+                <li>Muscle-up technique</li>
+                <li>Front lever progressions</li>
+                <li>Back lever holds</li>
+                <li>Handstand push-ups</li>
+                <li>Pistol squats</li>
+                <li>Advanced core work</li>
+              </ul>
+            </div>
+            <div class="level-actions">
+              <button class="btn btn-primary" style="flex: 1;">Start Intermediate Level</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expert Level -->
+      <div class="level-card-large" onclick="window.location.href='expert.html'">
+        <div class="level-card-content">
+          <div class="level-sidebar expert">
+            <div class="level-number">04</div>
+            <div class="level-icon-large"><i class="fas fa-bolt" style="font-size:inherit;color:inherit;"></i></div>
+            <h2 class="level-title-large">EXPERT</h2>
+            <p class="level-subtitle">Elite Mastery</p>
+          </div>
+          <div class="level-main">
+            <h3>Achieve Elite-Level Strength</h3>
+            <p>Master the most demanding calisthenics skills. Work towards full planche, one-arm pull-ups, iron cross, 90-degree push-ups, and other movements that represent the pinnacle of bodyweight strength.</p>
+            <div class="level-features">
+              <div class="level-feature"><span class="level-feature-value">150+</span><span class="level-feature-label">Exercises</span></div>
+              <div class="level-feature"><span class="level-feature-value">24+</span><span class="level-feature-label">Weeks</span></div>
+              <div class="level-feature"><span class="level-feature-value">Elite</span><span class="level-feature-label">Difficulty</span></div>
+            </div>
+            <div class="level-highlights">
+              <ul>
+                <li>Full planche progressions</li>
+                <li>One-arm pull-up training</li>
+                <li>Iron cross work</li>
+                <li>90-degree push-ups</li>
+                <li>Human flag progressions</li>
+                <li>Advanced freestyle combinations</li>
+              </ul>
+            </div>
+            <div class="level-actions">
+              <button class="btn btn-primary" style="flex: 1;">Start Expert Level</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Getting Started -->
+  <section class="getting-started">
+    <div class="container">
+      <div class="getting-started-content">
+        <h2 class="text-gradient">READY TO BEGIN?</h2>
+        <p>Not sure where to start? Create a free account and our system will help you determine the right level based on your current abilities. Track your progress, earn badges, and join thousands of athletes on their calisthenics journey.</p>
+        <div style="display: flex; gap: 1.5rem; justify-content: center;">
+          <a href="register.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;"><i class="fas fa-user-plus"></i> Create Free Account</a>
+          <a href="about.html" class="btn btn-outline" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;"><i class="fas fa-info-circle"></i> Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>CALISTIFY</h3>
+          <p style="color: var(--text-secondary); margin-top: 1rem; line-height: 1.8;">Your complete platform for mastering calisthenics. Build strength, control, and achieve extraordinary results with bodyweight training.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Calisthenics</a></li>
+            <li><a href="training.html">Training Programs</a></li>
+            <li><a href="nutrition.html">Nutrition Guide</a></li>
+            <li><a href="shop.html">Equipment Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Account</h3>
+          <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Sign Up</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="progress.html">Track Progress</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Calistify. All rights reserved. Transform your body through the power of calisthenics.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
